@@ -1,6 +1,64 @@
 <div class="page-content">
     <div class="container-fluid">
 
+
+        <div class="row">
+            <div class="col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Maestro Paciente</h4>
+                        <p class="card-subtitle mb-4">Override your input files with style. Your so fresh input file — Default version.</p>
+
+                        <input type="file" class="dropify" data-height="300" />
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col -->
+
+            <div class="col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Maestro Personal</h4>
+                        <p class="card-subtitle mb-4">Override your input files with style. Your so fresh input file — Default version.</p>
+
+                        <input type="file" class="dropify" data-height="300" />
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col -->
+
+            <div class="col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Maestro Registrador</h4>
+                        <p class="card-subtitle mb-4">Override your input files with style. Your so fresh input file — Default version.</p>
+
+                        <input type="file" class="dropify" data-height="300" />
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col -->
+
+            
+            <div class="col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Archivo Plano Nuevo</h4>
+                        <p class="card-subtitle mb-4">Override your input files with style. Your so fresh input file — Default version.</p>
+
+                        <input type="file" class="dropify" data-height="300" />
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col -->
+
+        </div>
+        <!-- end row-->
+
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
@@ -526,7 +584,5 @@
     });
 
     table.buttons().container()
-    .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-
-
+        .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
 </script>

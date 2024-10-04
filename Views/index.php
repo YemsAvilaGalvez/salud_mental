@@ -1,9 +1,10 @@
 <?php
+/*
 session_start();
 
 // Verificar si la sesión está iniciada
 if (!empty($_SESSION['usuario'])) {
-    // Si la sesión está activa, el código continuará
+    // Si la sesión está activa, el código continuará */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -186,6 +187,10 @@ if (!empty($_SESSION['usuario'])) {
                         <li>
                             <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','fichaTecnica/ficha_view.php')"><i class="mdi mdi-home-analytics"></i><span>Ficha Técnica</span></a>
                         </li>
+                        
+                        <li>
+                            <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','usuario/usuario_view.php')"><i class="mdi mdi-home-analytics"></i><span>Usuarios</span></a>
+                        </li>
 
                     </ul>
                 </div>
@@ -202,23 +207,116 @@ if (!empty($_SESSION['usuario'])) {
             <div class="page-content">
                 <div class="container-fluid">
 
-                    <!-- start page title -->
                     <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0 font-size-18">Starter</h4>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <h5 class="card-title mb-0">N° Pacientes</h5>
+                                        </div>
+                                        <div class="row d-flex align-items-center mb-4">
+                                            <div class="col-8">
+                                                <h2 class="d-flex align-items-center mb-0">
+                                                    12
+                                                </h2>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <span class="text-muted">12 %<i
+                                                        class="mdi mdi-arrow-up text-success"></i></span>
+                                            </div>
+                                        </div>
 
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                                        <li class="breadcrumb-item active">Starter</li>
-                                    </ol>
+                                        <div class="progress shadow-sm" style="height: 5px;">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card body-->
+                                </div><!-- end card-->
+                            </div> <!-- end col-->
+
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <h5 class="card-title mb-0">N° Personal</h5>
+                                        </div>
+                                        <div class="row d-flex align-items-center mb-4">
+                                            <div class="col-8">
+                                                <h2 class="d-flex align-items-center mb-0">
+                                                    15
+                                                </h2>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <span class="text-muted">18.71% <i
+                                                        class="mdi mdi-arrow-down text-danger"></i></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress shadow-sm" style="height: 5px;">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card body-->
+                                </div><!-- end card-->
+                            </div> <!-- end col-->
+
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <h5 class="card-title mb-0">N° Pacientes con Atención Incompleta</h5>
+                                        </div>
+                                        <div class="row d-flex align-items-center mb-4">
+                                            <div class="col-8">
+                                                <h2 class="d-flex align-items-center mb-0">
+                                                    $784.62
+                                                </h2>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <span class="text-muted">57% <i
+                                                        class="mdi mdi-arrow-up text-success"></i></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress shadow-sm" style="height: 5px;">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card body-->
                                 </div>
+                                <!--end card-->
+                            </div> <!-- end col-->
 
-                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <h5 class="card-title mb-0">N° Pacientes con Atención Completa</h5>
+                                        </div>
+                                        <div class="row d-flex align-items-center mb-4">
+                                            <div class="col-8">
+                                                <h2 class="d-flex align-items-center mb-0">
+                                                    1,15,187
+                                                </h2>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <span class="text-muted">17.8% <i
+                                                        class="mdi mdi-arrow-down text-danger"></i></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="progress shadow-sm" style="height: 5px;">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card body-->
+                                </div><!-- end card-->
+                            </div> <!-- end col-->
                         </div>
-                    </div>
-                    <!-- end page title -->
+                        <!-- end row-->
 
                 </div> <!-- container-fluid -->
             </div>
@@ -289,9 +387,10 @@ if (!empty($_SESSION['usuario'])) {
 
 </html>
 <?php 
+/*
 } else {
     // Si no hay sesión, redirigir al inicio
     header("Location: ../../index.php");
     exit();
-}
+}*/
 ?>
