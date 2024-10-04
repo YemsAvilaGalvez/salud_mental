@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="mb-0 font-size-18">Pacientes</h4>
+                    <h4 class="mb-0 font-size-18">Registrador</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Listado de Pacientes</h4>
+                        <h4 class="card-title">Listado del Registrador</h4>
 
                         <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
                             <thead>
@@ -526,7 +526,5 @@
     });
 
     table.buttons().container()
-    .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
-
-
+        .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
 </script>

@@ -12,8 +12,11 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="../style/assets/images/favicon.ico">
 
-    <!-- datatable -->
-    <link href="../DataTables/datatables.min.css" rel="stylesheet">
+    <!-- Plugins css -->
+    <link href="../style/plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="../style/plugins/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="../style/plugins/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="../style/plugins/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
 
     <!-- App css -->
     <link href="../style/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -143,23 +146,23 @@
                         </li>
 
                         <li>
-                            <a href="#" class="waves-effect"><i class="mdi mdi-home-analytics"></i><span>Personal</span></a>
+                            <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','personal/personal_view.php')"><i class="mdi mdi-home-analytics"></i><span>Personal</span></a>
                         </li>
 
                         <li>
-                            <a href="#" class="waves-effect"><i class="mdi mdi-home-analytics"></i><span>Registrador</span></a>
+                            <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','registrador/registrador_view.php')"><i class="mdi mdi-home-analytics"></i><span>Registrador</span></a>
                         </li>
 
                         <li>
-                            <a href="#" class="waves-effect"><i class="mdi mdi-home-analytics"></i><span>Consolidado</span></a>
+                            <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','consolidado/consolidado_view.php')"><i class="mdi mdi-home-analytics"></i><span>Consolidado</span></a>
                         </li>
 
                         <li>
-                            <a href="#" class="waves-effect"><i class="mdi mdi-home-analytics"></i><span>Seguimiento</span></a>
+                            <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','seguimiento/seguimiento_view.php')"><i class="mdi mdi-home-analytics"></i><span>Seguimiento</span></a>
                         </li>
 
                         <li>
-                            <a href="#" class="waves-effect"><i class="mdi mdi-home-analytics"></i><span>Ficha Técnica</span></a>
+                            <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','fichaTecnica/ficha_view.php')"><i class="mdi mdi-home-analytics"></i><span>Ficha Técnica</span></a>
                         </li>
 
                     </ul>
@@ -231,8 +234,24 @@
     <script src="../style/assets/js/waves.js"></script>
     <script src="../style/assets/js/simplebar.min.js"></script>
 
-    <!-- datatable -->
-    <script src="../DataTables/datatables.min.js"></script>
+    <!-- third party js -->
+    <script src="../style/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../style/plugins/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../style/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="../style/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="../style/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="../style/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="../style/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="../style/plugins/datatables/buttons.flash.min.js"></script>
+    <script src="../style/plugins/datatables/buttons.print.min.js"></script>
+    <script src="../style/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="../style/plugins/datatables/dataTables.select.min.js"></script>
+    <script src="../style/plugins/datatables/pdfmake.min.js"></script>
+    <script src="../style/plugins/datatables/vfs_fonts.js"></script>
+    <!-- third party js ends -->
+
+    <!-- Datatables init -->
+    <script src="../style/assets/pages/datatables-demo.js"></script>
 
     <!-- App js -->
     <script src="../style/assets/js/theme.js"></script>
