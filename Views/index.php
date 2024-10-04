@@ -1,10 +1,10 @@
 <?php
-/*
+
 session_start();
 
 // Verificar si la sesión está iniciada
 if (!empty($_SESSION['usuario'])) {
-    // Si la sesión está activa, el código continuará */
+    // Si la sesión está activa, el código continuará 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -387,10 +387,10 @@ if (!empty($_SESSION['usuario'])) {
 
 </html>
 <?php 
-/*
+
 } else {
     // Si no hay sesión, redirigir al inicio
     header("Location: ../../index.php");
     exit();
-}*/
+}
 ?>
