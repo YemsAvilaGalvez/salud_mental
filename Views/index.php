@@ -26,6 +26,18 @@ if (!empty($_SESSION['usuario'])) {
     <link href="../style/plugins/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
     <link href="../style/plugins/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
 
+    <!-- Dropify css -->
+    <link href="../style/plugins/dropify/dropify.min.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- Plugins css -->
+    <link href="../style/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+    <link href="../style/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../style/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../style/plugins/switchery/switchery.min.css" rel="stylesheet" type="text/css" />
+    <link href="../style/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../style/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+
     <!-- App css -->
     <link href="../style/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../style/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -187,7 +199,7 @@ if (!empty($_SESSION['usuario'])) {
                         <li>
                             <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','fichaTecnica/ficha_view.php')"><i class="mdi mdi-home-analytics"></i><span>Ficha Técnica</span></a>
                         </li>
-                        
+
                         <li>
                             <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','usuario/usuario_view.php')"><i class="mdi mdi-home-analytics"></i><span>Usuarios</span></a>
                         </li>
@@ -208,115 +220,115 @@ if (!empty($_SESSION['usuario'])) {
                 <div class="container-fluid">
 
                     <div class="row">
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <h5 class="card-title mb-0">N° Pacientes</h5>
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-0">N° Pacientes</h5>
+                                    </div>
+                                    <div class="row d-flex align-items-center mb-4">
+                                        <div class="col-8">
+                                            <h2 class="d-flex align-items-center mb-0">
+                                                12
+                                            </h2>
                                         </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    12
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">12 %<i
-                                                        class="mdi mdi-arrow-up text-success"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
-                                            </div>
+                                        <div class="col-4 text-right">
+                                            <span class="text-muted">12 %<i
+                                                    class="mdi mdi-arrow-up text-success"></i></span>
                                         </div>
                                     </div>
-                                    <!--end card body-->
-                                </div><!-- end card-->
-                            </div> <!-- end col-->
 
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <h5 class="card-title mb-0">N° Personal</h5>
-                                        </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    15
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">18.71% <i
-                                                        class="mdi mdi-arrow-down text-danger"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
-                                            </div>
+                                    <div class="progress shadow-sm" style="height: 5px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
                                         </div>
                                     </div>
-                                    <!--end card body-->
-                                </div><!-- end card-->
-                            </div> <!-- end col-->
-
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <h5 class="card-title mb-0">N° Pacientes con Atención Incompleta</h5>
-                                        </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    $784.62
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">57% <i
-                                                        class="mdi mdi-arrow-up text-success"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end card body-->
                                 </div>
-                                <!--end card-->
-                            </div> <!-- end col-->
+                                <!--end card body-->
+                            </div><!-- end card-->
+                        </div> <!-- end col-->
 
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <h5 class="card-title mb-0">N° Pacientes con Atención Completa</h5>
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-0">N° Personal</h5>
+                                    </div>
+                                    <div class="row d-flex align-items-center mb-4">
+                                        <div class="col-8">
+                                            <h2 class="d-flex align-items-center mb-0">
+                                                15
+                                            </h2>
                                         </div>
-                                        <div class="row d-flex align-items-center mb-4">
-                                            <div class="col-8">
-                                                <h2 class="d-flex align-items-center mb-0">
-                                                    1,15,187
-                                                </h2>
-                                            </div>
-                                            <div class="col-4 text-right">
-                                                <span class="text-muted">17.8% <i
-                                                        class="mdi mdi-arrow-down text-danger"></i></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="progress shadow-sm" style="height: 5px;">
-                                            <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
+                                        <div class="col-4 text-right">
+                                            <span class="text-muted">18.71% <i
+                                                    class="mdi mdi-arrow-down text-danger"></i></span>
                                         </div>
                                     </div>
-                                    <!--end card body-->
-                                </div><!-- end card-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
+
+                                    <div class="progress shadow-sm" style="height: 5px;">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card body-->
+                            </div><!-- end card-->
+                        </div> <!-- end col-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-0">N° Pacientes con Atención Incompleta</h5>
+                                    </div>
+                                    <div class="row d-flex align-items-center mb-4">
+                                        <div class="col-8">
+                                            <h2 class="d-flex align-items-center mb-0">
+                                                $784.62
+                                            </h2>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <span class="text-muted">57% <i
+                                                    class="mdi mdi-arrow-up text-success"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress shadow-sm" style="height: 5px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card body-->
+                            </div>
+                            <!--end card-->
+                        </div> <!-- end col-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <h5 class="card-title mb-0">N° Pacientes con Atención Completa</h5>
+                                    </div>
+                                    <div class="row d-flex align-items-center mb-4">
+                                        <div class="col-8">
+                                            <h2 class="d-flex align-items-center mb-0">
+                                                1,15,187
+                                            </h2>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <span class="text-muted">17.8% <i
+                                                    class="mdi mdi-arrow-down text-danger"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress shadow-sm" style="height: 5px;">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
+                                    </div>
+                                </div>
+                                <!--end card body-->
+                            </div><!-- end card-->
+                        </div> <!-- end col-->
+                    </div>
+                    <!-- end row-->
 
                 </div> <!-- container-fluid -->
             </div>
@@ -373,6 +385,23 @@ if (!empty($_SESSION['usuario'])) {
     <!-- Datatables init -->
     <script src="../style/assets/pages/datatables-demo.js"></script>
 
+    <!--dropify-->
+    <script src="../style/plugins/dropify/dropify.min.js"></script>
+
+    <!-- Init js-->
+    <script src="../style/assets/pages/fileuploads-demo.js"></script>
+
+    <!-- Plugins js -->
+    <script src="../style/plugins/autonumeric/autoNumeric-min.js"></script>
+    <script src="../style/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../style/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="../style/plugins/moment/moment.js"></script>
+    <script src="../style/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../style/plugins/select2/select2.min.js"></script>
+    <script src="../style/plugins/switchery/switchery.min.js"></script>
+    <script src="../style/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="../style/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
     <!-- App js -->
     <script src="../style/assets/js/theme.js"></script>
 
@@ -386,7 +415,8 @@ if (!empty($_SESSION['usuario'])) {
 </body>
 
 </html>
-<?php 
+<?php
+
 
 } else {
     // Si no hay sesión, redirigir al inicio

@@ -20,6 +20,26 @@
         <!-- end page title -->
 
         <div class="row">
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Date Range Picker</h4>
+                        <p class="card-subtitle mb-4">A JavaScript component for choosing date ranges, dates and times.</p>
+
+                        <div class="form-group mb-3">
+                            <label>Date Range</label>
+                            <input type="text" class="form-control date" id="singledaterange" data-toggle="daterangepicker" data-cancel-class="btn-warning">
+                        </div>
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row-->
+
+
+        <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
@@ -526,7 +546,11 @@
     });
 
     table.buttons().container()
-    .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+        .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
 
-
+    // Date Range Picker
+    var defaultOptions = {
+        "cancelClass": "btn-light",
+        "applyButtonClasses": "btn-success"
+    };
 </script>
