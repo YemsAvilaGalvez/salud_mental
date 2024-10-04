@@ -20,7 +20,7 @@
 </head>
 <?php 
 session_start();
-if (!empty($_SESSION['us_tipo'])) {
+if (!empty($_SESSION['usuario'])) {
   header("Location: Controller/LoginController.php");
 }
 else{
