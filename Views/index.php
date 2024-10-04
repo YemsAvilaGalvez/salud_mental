@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+// Verificar si la sesión está iniciada
+if (!empty($_SESSION['usuario'])) {
+    // Si la sesión está activa, el código continuará
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,7 +127,7 @@
                                 <span>Lock Account</span>
                             </a>
                             <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                href="javascript:void(0)">
+                                href="../Controller/Logout.php">
                                 <span>Log Out</span>
                             </a>
                         </div>
@@ -262,3 +269,10 @@
 </body>
 
 </html>
+<?php 
+} else {
+    // Si no hay sesión, redirigir al inicio
+    header("Location: ../../index.php");
+    exit();
+}
+?>
