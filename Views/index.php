@@ -433,7 +433,7 @@ if (!empty($_SESSION['usuario'])) {
 
 } else {
     // Si no hay sesión, redirigir al inicio
-    header("Location: ../../index.php");
+    header("Location: ../index.php");
     exit();
 }
 ?>
