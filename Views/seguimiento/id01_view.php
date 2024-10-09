@@ -5,38 +5,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="mb-0 font-size-18">Seguimiento de Pacientes</h4>
-
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                            <li class="breadcrumb-item active">Datatables</li>
-                        </ol>
-                    </div>
-
+                    <h4 class="mb-0 font-size-18">TRATAMIENTO ESPECIALIZADO EN VIOLENCIA FAMILIAR</h4>
                 </div>
             </div>
         </div>
         <!-- end page title -->
-
-        <div class="row">
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-body">
-
-                        <h4 class="card-title">Date Range Picker</h4>
-                        <p class="card-subtitle mb-4">A JavaScript component for choosing date ranges, dates and times.</p>
-
-                        <div class="form-group mb-3">
-                            <label>Date Range</label>
-                            <input type="text" class="form-control date" id="singledaterange" data-toggle="daterangepicker" data-cancel-class="btn-warning">
-                        </div>
-                    </div> <!-- end card-body-->
-                </div> <!-- end card-->
-
-            </div> <!-- end col -->
-        </div>
-        <!-- end row-->
 
 
         <div class="row">
@@ -548,9 +521,4 @@
     table.buttons().container()
         .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
 
-    // Date Range Picker
-    var defaultOptions = {
-        "cancelClass": "btn-light",
-        "applyButtonClasses": "btn-success"
-    };
 </script>
