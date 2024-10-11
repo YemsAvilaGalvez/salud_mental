@@ -11,7 +11,7 @@ if (!empty($_SESSION['usuario'])) {
 
     <head>
         <meta charset="utf-8" />
-        <title> Xeloro - Admin & Dashboard Template</title>
+        <title>Salud Mental</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="MyraStudio" name="author" />
@@ -207,10 +207,6 @@ if (!empty($_SESSION['usuario'])) {
                                     <li><a href="#" onclick="cargar_contenido('contenido_principal','seguimiento/id09_view.php')">ID09</a></li>
                                     <li><a href="#" onclick="cargar_contenido('contenido_principal','seguimiento/id10_view.php')">ID10</a></li>
                                 </ul>
-                            </li>
-
-                            <li>
-                                <a href="#" class="waves-effect" onclick="cargar_contenido('contenido_principal','fichaTecnica/ficha_view.php')"><i class="mdi mdi-home-analytics"></i><span>Ficha Técnica</span></a>
                             </li>
 
                             <li>
