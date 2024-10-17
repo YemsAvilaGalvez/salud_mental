@@ -57,17 +57,14 @@ class Modelo_Usuario extends conexionBD
     /**************************************************
  		     REGISTRAR USUARIOS
      **************************************************/
-    public function Registrar_Usuario($usuario, $clave, $correo, $rol, $ruta)
+    public function Registrar_Usuario($usuario, $clave)
     {
         $c = conexionBD::conexionPDO();
 
-        $sql = "CALL SP_REGISTRAR_USUARIOS(?,?,?,?,?)";
+        $sql = "CALL SP_REGISTRAR_USUARIOS(?,?)";
         $query = $c->prepare($sql); //mandamos el precedure
         $query->bindParam(1, $usuario); //enviamos los parametros seguun la posicion
         $query->bindParam(2, $clave);
-        $query->bindParam(3, $correo);
-        $query->bindParam(4, $rol);
-        $query->bindParam(5, $ruta);
         $resultado = $query->execute();
         if ($row = $query->fetchColumn()) {
             return $row;
@@ -89,16 +86,14 @@ class Modelo_Usuario extends conexionBD
     /**************************************************
  		      MODIFICAR USUARIOS
      **************************************************/
-    public function Modificar_Usuario($id, $usuario, $correo, $rol) //viene del controlador
+    public function Modificar_Usuario($id, $usuario) //viene del controlador
     {
         $c = conexionBD::conexionPDO();
 
-        $sql = "CALL SP_MODIFICAR_USUARIO(?,?,?,?)";
+        $sql = "CALL SP_MODIFICAR_USUARIO(?,?)";
         $query = $c->prepare($sql); //mandamos el precedure
         $query->bindParam(1, $id);
         $query->bindParam(2, $usuario); //enviamos los parametros seguun la posicion del procedure
-        $query->bindParam(3, $correo);
-        $query->bindParam(4, $rol);
         $resultado = $query->execute();
         //solo de usa cuando no se retorna un valor en el procedure(actualizar)
         if ($resultado) {

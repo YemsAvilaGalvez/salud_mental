@@ -67,7 +67,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="../Controller/usuario/destruir_sesion.php" role="button" title="Cerrar Sesion">
+                    <a class="nav-link" href="../Controller/usuario/destruir_sesion.php" role="button" title="Cerrar Sesion">
                         <i class="fas fa-power-off"></i>
                     </a>
                 </li>
@@ -91,7 +91,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                         <img src="../plantilla/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block"><?php echo $_SESSION['S_USUARIO'] ?></a>
                     </div>
                 </div>
 
@@ -139,7 +139,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Usuario
-                                    <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
                         </li>
@@ -278,6 +277,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
     <script src="../plantilla/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="../plantilla/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../plantilla/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- bs-custom-file-input -->
+    <script src="../plantilla/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- alert -->
     <script src="../utilitarios/sweetalert.js"></script>
     <!-- js de usuario -->
