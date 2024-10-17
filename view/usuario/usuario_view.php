@@ -4,13 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>DataTables</h1>
-            </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">DataTables</li>
-                </ol>
+                <h1>Usuario</h1>
             </div>
         </div>
     </div><!-- /.container-fluid -->
@@ -24,7 +18,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                        <h3 class="card-title">Lista de Usuarios</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -53,6 +47,28 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
+
+        <!-- modal editar usuario -->
+        <div class="modal fade" id="modal_editar_usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Editar Usuario</h5>
+                        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Woohoo, you're reading this text in a modal!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary waves-effect waves-light" onclick="ModificarUsuario();">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
     <!-- /.container-fluid -->
 </section>
