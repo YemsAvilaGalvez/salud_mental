@@ -135,6 +135,14 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','paciente/paciente_view.php')">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Usuario
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','usuario/usuario_view.php')">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
