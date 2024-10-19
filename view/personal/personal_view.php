@@ -1,10 +1,10 @@
-<script src="../js/paciente.js?rev=<?php echo time(); ?>"></script>
+<script src="../js/personal.js?rev=<?php echo time(); ?>"></script>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Paciente</h1>
+                <h1>Personal</h1>
             </div>
         </div>
     </div><!-- /.container-fluid -->
@@ -18,11 +18,11 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Lista de Paciente</h3>
+                        <h3 class="card-title">Lista del Personal</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="tabla_paciente" class="table table-bordered table-striped">
+                        <table id="tabla_personal" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -30,18 +30,13 @@
                                     <th>N° Documento</th>
                                     <th>Nombre</th>
                                     <th>Fecha Nacimiento</th>
-                                    <th>Genero</th>
-                                    <th>Etnia</th>
-                                    <th>Ubigeo Nacimiento</th>
-                                    <th>Ubigeo Reniec</th>
-                                    <th>Domicilio Reniec</th>
-                                    <th>Ubigeo Declarado</th>
-                                    <th>Domicilio Declarado</th>
-                                    <th>Referencia Domicilio</th>
-                                    <th>País</th>
+                                    <th>Contrata</th>
+                                    <th>Profesion</th>
+                                    <th>Colegiatura</th>
+                                    <th>N° Colegiatura</th>
                                     <th>Establecimiento</th>
                                     <th>Fecha de Alta</th>
-                                    <th>Fecha de Modificación</th>
+                                    <th>Fecha de Baja</th>
                                 </tr>
                             </thead>
 
@@ -52,18 +47,13 @@
                                     <th>N° Documento</th>
                                     <th>Nombre</th>
                                     <th>Fecha Nacimiento</th>
-                                    <th>Genero</th>
-                                    <th>Etnia</th>
-                                    <th>Ubigeo Nacimiento</th>
-                                    <th>Ubigeo Reniec</th>
-                                    <th>Domicilio Reniec</th>
-                                    <th>Ubigeo Declarado</th>
-                                    <th>Domicilio Declarado</th>
-                                    <th>Referencia Domicilio</th>
-                                    <th>País</th>
+                                    <th>Contrata</th>
+                                    <th>Profesion</th>
+                                    <th>Colegiatura</th>
+                                    <th>N° Colegiatura</th>
                                     <th>Establecimiento</th>
                                     <th>Fecha de Alta</th>
-                                    <th>Fecha de Modificación</th>
+                                    <th>Fecha de Baja</th>
                                 </tr>
                             </tfoot>
                         </table>
@@ -113,5 +103,5 @@
 <!-- /.content -->
 
 <script>
-    Listar_Paciente();
+    Listar_Personal();
 </script>

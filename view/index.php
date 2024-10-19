@@ -138,7 +138,31 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                             <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','paciente/paciente_view.php')">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Usuario
+                                    Pacientes
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','personal/personal_view.php')">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Personal
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','registrador/registrador_view.php')">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Registrador
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','nominal/nominal_view.php')">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Nominal
                                 </p>
                             </a>
                         </li>

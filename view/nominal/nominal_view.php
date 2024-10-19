@@ -1,10 +1,10 @@
-<script src="../js/paciente.js?rev=<?php echo time(); ?>"></script>
+<script src="../js/nominal.js?rev=<?php echo time(); ?>"></script>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Paciente</h1>
+                <h1>Nominal</h1>
             </div>
         </div>
     </div><!-- /.container-fluid -->
@@ -18,11 +18,11 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Lista de Paciente</h3>
+                        <h3 class="card-title">Lista de Nominal</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="tabla_paciente" class="table table-bordered table-striped">
+                        <table id="tabla_nominal" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -113,5 +113,5 @@
 <!-- /.content -->
 
 <script>
-    Listar_Paciente();
+    Listar_Nominal();
 </script>
