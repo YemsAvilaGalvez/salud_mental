@@ -166,6 +166,29 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Otros
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','otro/documento_view.php')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Tipo de documento</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Inactive Page</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','usuario/usuario_view.php')">
                                 <i class="nav-icon fas fa-th"></i>
