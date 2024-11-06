@@ -64,7 +64,7 @@
                     <div class="modal-body">
                         <div class="card-body">
                             <div class="form-group">
-                                <input type="text" id="text_idusuario_editar" hidden="">
+                                
                                 <div class="form-group">
                                     <label for="exampleInputFile">Importar excel</label>
                                     <div class="input-group">
