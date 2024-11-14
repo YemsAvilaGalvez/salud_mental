@@ -18,7 +18,20 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Lista de Paciente</h3>
+                        <h3 class="card-title mb-4">Lista de Paciente</h3>
+                        <form method="POST" enctype="multipart/form-data" id="cargar_paciente">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="filePaciente" id="filePaciente" accept=".xls, .xlsx, .xml, .csv">
+                                        <label class="custom-file-label" for="exampleInputFile">Subir Archivo</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default btn-block" id="btnCargarPaciente">Importar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -76,37 +89,6 @@
         </div>
         <!-- /.row -->
 
-        <!-- modal editar usuario -->
-        <div class="modal fade" id="modal_editar_paciente">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Editar Usuario</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <input type="text" id="text_idpaciente_editar" hidden="">
-                                <label for="exampleInputEmail1">Usuario</label>
-                                <input type="text" class="form-control" id="text_usuario_editar" placeholder="">
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" onclick="ModificarUsuario();">Guardar</button>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
-
     </div>
     <!-- /.container-fluid -->
 </section>
@@ -114,4 +96,57 @@
 
 <script>
     Listar_Paciente();
+
+    $(function() {
+        bsCustomFileInput.init();
+    });
+
+
+    $(document).ready(function() {
+        $('#cargar_paciente').on('submit', function(e) {
+            e.preventDefault()
+            /** validar que se seleccione un archivo */
+            if ($('#filePaciente').get(0).files.length == 0) {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Debe seleccionar un archivo EXCEL.',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+            } else {
+                /** validar el formato de archivo */
+                var extensiones_permitidas = ['.xls', '.xlsx', '.xml', '.csv']
+                var input_file_pacientes = $('#filePaciente')
+                var exp_reg = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(" + extensiones_permitidas.join('|') + ")$")
+
+                if (!exp_reg.test(input_file_pacientes.val().toLowerCase())) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'warning',
+                        title: 'Debe seleccionar un archivo con extensión .xls, .xlsx, .xml o .csv',
+                        showConfirmButton: false,
+                        timer: 2500
+                    })
+
+                    return false
+                }
+                var datos = new FormData($(cargar_paciente)[0])
+
+                $('#btnCargarPaciente').prop('disabled',true)
+
+                $.ajax({
+                    url: 'ajax/pacientes.ajax.php',
+                    type: 'POST',
+                    data: datos,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success:function(respuesta){
+                        console.log("respuesta",respuesta)
+                    }
+                })
+            }
+        })
+    })
 </script>
