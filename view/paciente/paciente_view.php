@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title mb-4">Lista de Paciente</h3>
-                        <form method="POST" enctype="multipart/form-data" id="cargar_paciente">
+                        <form method="POST" enctype="multipart/form-data" id="form_cargar_paciente">
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="custom-file">
@@ -101,52 +101,95 @@
         bsCustomFileInput.init();
     });
 
-
     $(document).ready(function() {
-        $('#cargar_paciente').on('submit', function(e) {
-            e.preventDefault()
-            /** validar que se seleccione un archivo */
-            if ($('#filePaciente').get(0).files.length == 0) {
+
+        $("#form_cargar_paciente").on('submit', function(e) {
+
+            e.preventDefault();
+
+            /*===================================================================*/
+            //VALIDAR QUE SE SELECCIONE UN ARCHIVO
+            /*===================================================================*/
+            if ($("#filePaciente").get(0).files.length == 0) {
                 Swal.fire({
                     position: 'center',
                     icon: 'warning',
-                    title: 'Debe seleccionar un archivo EXCEL.',
+                    title: 'Debe seleccionar un archivo (Excel).',
                     showConfirmButton: false,
                     timer: 2500
                 })
             } else {
-                /** validar el formato de archivo */
-                var extensiones_permitidas = ['.xls', '.xlsx', '.xml', '.csv']
-                var input_file_pacientes = $('#filePaciente')
-                var exp_reg = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(" + extensiones_permitidas.join('|') + ")$")
 
-                if (!exp_reg.test(input_file_pacientes.val().toLowerCase())) {
+                /*===================================================================*/
+                //VALIDAR QUE EL ARCHIVO SELECCIONADO SEA EN EXTENSION XLS O XLSX
+                /*===================================================================*/
+                var extensiones_permitidas = [".xls", ".xlsx", ".xml", ".csv"];
+                var input_file_productos = $("#filePaciente");
+                var exp_reg = new RegExp("([a-zA-Z0-9\s_\\-.\:])+(" + extensiones_permitidas.join('|') + ")$");
+
+                if (!exp_reg.test(input_file_productos.val().toLowerCase())) {
                     Swal.fire({
                         position: 'center',
                         icon: 'warning',
-                        title: 'Debe seleccionar un archivo con extensión .xls, .xlsx, .xml o .csv',
+                        title: 'Debe seleccionar un archivo con extensión .xls o .xlsx.',
                         showConfirmButton: false,
                         timer: 2500
                     })
 
-                    return false
+                    return false;
                 }
-                var datos = new FormData($(cargar_paciente)[0])
 
-                $('#btnCargarPaciente').prop('disabled',true)
+                var datos = new FormData($(form_cargar_paciente)[0]);
+
+                $("#btnCargarPaciente").prop("disabled", true);
+                /*
+                $("#img_carga").attr("style", "display:block");
+                $("#img_carga").attr("style", "height:200px");
+                $("#img_carga").attr("style", "width:200px"); */
 
                 $.ajax({
-                    url: 'ajax/pacientes.ajax.php',
-                    type: 'POST',
+                    url: "../ajax/pacientes.ajax.php",
+                    type: "POST",
                     data: datos,
                     cache: false,
                     contentType: false,
                     processData: false,
-                    success:function(respuesta){
-                        console.log("respuesta",respuesta)
+                    dataType: 'json',
+                    success: function(respuesta) {
+
+                        console.log("respuesta",respuesta);
+/*
+                        if (respuesta['totalCategorias'] > 0 && respuesta['totalProductos'] > 0) {
+
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Se registraron ' + respuesta['totalCategorias'] + ' categorías y ' + respuesta['totalProductos'] + 'productos correctamente!',
+                                showConfirmButton: false,
+                                timer: 2500
+                            })
+
+                            $("#btnCargar").prop("disabled", false);
+                            $("#img_carga").attr("style", "display:none");
+                        } else {
+
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'error',
+                                title: 'Se presento un error al momento de realizar el registro de categorías y/o productos!',
+                                showConfirmButton: false,
+                                timer: 2500
+                            })
+
+                            $("#btnCargar").prop("disabled", false);
+                            $("#img_carga").attr("style", "display:none");
+
+                        }*/
                     }
-                })
+                });
+
             }
         })
+
     })
 </script>

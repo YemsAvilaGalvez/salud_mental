@@ -2,8 +2,10 @@
 
 class PacientesControlador{
 
-    static public function ctrCargarPaciente($filePacientes){
+    static public function ctrCargaMasivaProductos($filePacientes){
+        
         $respuesta = PacienteModelo::mdlCargarPaciente($filePacientes);
+        
         return $respuesta;
     }
 }
