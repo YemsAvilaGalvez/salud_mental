@@ -35,7 +35,7 @@ if (isset($_SESSION['S_IDUSUARIO'])) { //si existe
 
 
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre de Usuario">
+                    <input type="text" class="form-control" placeholder="Nombre de Usuario" id="text_usuario">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-user"></span>
@@ -43,7 +43,7 @@ if (isset($_SESSION['S_IDUSUARIO'])) { //si existe
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Contraseña">
+                    <input type="password" class="form-control" placeholder="Contraseña" id="text_clave">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -63,7 +63,7 @@ if (isset($_SESSION['S_IDUSUARIO'])) { //si existe
                 </div>
 
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                    <button type="submit" class="btn btn-primary btn-block" onclick="Inciar_Sesion()">Iniciar Sesión</button>
                 </div>
                 <!-- /.col -->
 
@@ -83,6 +83,36 @@ if (isset($_SESSION['S_IDUSUARIO'])) { //si existe
     <script src="view/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="view/assets/dist/js/adminlte.min.js"></script>
+    <!-- alert -->
+    <script src="utilitarios/sweetalert.js"></script>
+    <!-- js usuario -->
+    <script src="js/usuario.js?rev=<?php echo time(); ?>"></script>
+
+    <script>
+        $('#text_clave').keypress(function(e) {
+            if (e.which == 13) {
+                Inciar_Sesion();
+            }
+        });
+
+        $('#text_usuario').trigger('focus');
+
+
+
+        const rmcheck = document.getElementById('remember');
+        usuarioinput = document.getElementById('text_usuario');
+        passinput = document.getElementById('text_clave');
+
+        if (localStorage.checkbox && localStorage.checkbox !== "") {
+            rmcheck.setAttribute("checked", "checked");
+            usuarioinput.value = localStorage.usuario;
+            passinput.value = localStorage.pass;
+        } else {
+            rmcheck.removeAttribute("checked");
+            usuarioinput.value = "";
+            passinput.value = "";
+        }
+    </script>
 </body>
 
 </html>
