@@ -53,11 +53,12 @@
                         </div>
                     </div>
                     <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
-                    </div>
-                    <!-- /.col -->
                 </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                </div>
+                <!-- /.col -->
 
                 <p class="mb-1">
                     <a href="forgot-password.html">Olvide mi contraseña</a>
