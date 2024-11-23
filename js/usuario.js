@@ -127,7 +127,7 @@ function Listar_usuario_serverside() {
         },
       },
       {
-        data: 5, //accion para activar y desactivar los botones
+        data: 4, //accion para activar y desactivar los botones
         render: function (data, type, row) {
           if (data === "ACTIVO") {
             return (
@@ -224,6 +224,24 @@ $("#tabla_usuario").on("click", ".desactivar", function () {
       Modificar_Estado(data[0], "INACTIVO"); //data 0 (id)
     }
   });
+});
+
+/**********************************************************************
+ 								  CAMBIAR CLAVE DE USUARIO
+ ***********************************************************************/
+$("#tabla_usuario").on("click", ".clave", function () {
+  //class foto tiene que ir en el boton
+  var data = tbl_usuario.row($(this).parents("tr")).data(); //tamaño de escritorio
+  if (tbl_usuario.row(this).child.isShown()) {
+    var data = tbl_usuario.row(this).data(); //para celular y usas el responsive datatable
+  }
+  $("#modal_editar_clave").modal({ backdrop: "static", keyboard: false });
+  $("#modal_editar_clave").modal("show"); //abrimos el modal
+  LimpiarModalUsuario();
+  //mandamos parametros a los texbox
+  document.getElementById("idusuario_clave").value = data[0];
+  document.getElementById("lbl_usuario_clave").innerHTML = data[1]; //enviamos el nombre del usu al modal
+  //console.log(data[0]);//capturaar ruta
 });
 
 /**********************************************************************
@@ -427,6 +445,52 @@ function Modificar_Estado(id, estado) {
       });
     } else {
       Swal.fire("Mensaje de Error", "No se puede cambiar el estado", "error");
+    }
+  });
+}
+
+/**********************************************************************
+ 						  MODIFICAR CLAVE DEL USUARIO
+ ***********************************************************************/
+function ModificarClaveUsuario() {
+  //validar que no esten vacios
+  let id = document.getElementById("idusuario_clave").value;
+  let clavenueva = document.getElementById("text_clave_editar").value;
+  let claverepeti = document.getElementById("text_clave_repetir").value;
+  if (id.length == 0 || clavenueva.length == 0 || claverepeti.length == 0) {
+    return Swal.fire(
+      "Mensaje de Advertencia",
+      "Tiene campos vacios",
+      "warning"
+    );
+  }
+  //validar que sean iguales
+  if (clavenueva != claverepeti) {
+    return Swal.fire(
+      "Mensaje de Advertencia",
+      "Las claves ingresadas no coninciden",
+      "warning"
+    );
+  }
+  $.ajax({
+    url: "../controller/usuario/controlador_modificar_clave.php",
+    type: "POST",
+    data: {
+      id: id, //le enviamos los campos al controlador
+      clavenueva: clavenueva,
+    },
+  }).done(function (resp) {
+    if (resp > 0) {
+      Swal.fire("Mensaje de Confirmacion", "Clave Actualizada", "success").then(
+        (value) => {
+          document.getElementById("text_clave_editar").value = "";
+          document.getElementById("text_clave_repetir").value = "";
+          $("#modal_editar_clave").modal("hide"); //ocultamos modal
+          tbl_usuario.ajax.reload(); //recargar dataTable
+        }
+      );
+    } else {
+      Swal.fire("Mensaje de Error", "No se puede cambiar la clave", "error");
     }
   });
 }
