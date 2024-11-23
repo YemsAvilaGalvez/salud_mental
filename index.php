@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['S_IDUSUARIO'])) { //si existe
+    header('Location: view/index.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
