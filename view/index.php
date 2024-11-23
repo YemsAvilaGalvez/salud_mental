@@ -140,6 +140,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','consolidado_view/consolidado.php')">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Consolidado
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','usuario_view/usuario.php')">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
