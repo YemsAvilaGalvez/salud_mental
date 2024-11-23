@@ -39,7 +39,6 @@
                                     <th>Acción</th>
                                 </tr>
                             </thead>
-
                             <tfoot>
                                 <tr>
                                     <th>#</th>

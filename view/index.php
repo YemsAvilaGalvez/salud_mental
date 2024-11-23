@@ -30,6 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -116,6 +117,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         <li class="nav-header">EXAMPLES</li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','extras/extras_view.php')">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Extras
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -327,7 +338,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 "SSortDescending": ": ordenar de manera Descendente ",
             }
         }
+
     </script>
+
+
 </body>
 
 </html>

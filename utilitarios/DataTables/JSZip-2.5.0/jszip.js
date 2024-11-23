@@ -2202,7 +2202,7 @@ exports.getTypeOf = function(input) {
 exports.checkSupport = function(type) {
     var supported = support[type.toLowerCase()];
     if (!supported) {
-        throw new Error(type + " is not supported by this browser");
+        throw new Error(type + "is not supported by this browser");
     }
 };
 exports.MAX_VALUE_16BITS = 65535;
