@@ -527,10 +527,7 @@
     "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
     "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
     "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-    "sInfoPostFix":    "",
     "sSearch":         "Buscar:",
-    "sUrl":            "",
-    "sInfoThousands":  ",",
     "sLoadingRecords": "Cargando...",
     "oPaginate": {
         "sFirst":    "Primero",
@@ -556,7 +553,9 @@
     for (let i = 1; i <= 8; i++) {
       $(`#table${i}`).DataTable({
         "responsive": true,
-        "lengthChange": false,
+        "lengthChange": true, // Habilita el cambio de longitud
+        "pageLength": 10, // Configuración predeterminada de entradas mostradas
+        "lengthMenu": [10, 50, 100], // Opciones de cantidad de entradas
         "autoWidth": false,
         "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
         "language": spanishLangOptions
@@ -564,6 +563,7 @@
     }
   });
 </script>
+
 
 
 

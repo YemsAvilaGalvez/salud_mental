@@ -116,7 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-header">EXAMPLES</li>
+                        <li class="nav-header">SETTINGS</li>
 
                         <li class="nav-item">
                             <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','extras/extras_view.php')">
@@ -127,25 +127,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
 
+                        <li class="nav-header">FICHAS</li>
+
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon fas fa-file-alt"></i>
                                 <p>
-                                    Starter Pages
+                                    FICHAS
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','fichas/f_paciente_view.php')">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Active Page</p>
+                                        <p>F. Paciente</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','reporteproducto/mantenimiento_utilidad.php')">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','fichas/f_personal_view.php')">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Inactive Page</p>
+                                        <p>F. Personal</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','fichas/f_resgistrador_view.php')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>F. Registrdor</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','fichas/f_nominal_view.php')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>F. Nominal</p>
                                     </a>
                                 </li>
                             </ul>
