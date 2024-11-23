@@ -521,6 +521,7 @@
         </div>
 
 
+<<<<<<< HEAD
     </div>
     <!-- /.container-fluid -->
 </section>
@@ -556,9 +557,68 @@
         });
         return false;
 
+=======
+     </div>
+     <!-- /.container-fluid -->
+ </section>
+ <!-- /.content -->
+ <script>
+  const spanishLangOptions = {
+    "sProcessing":     "Procesando...",
+    "sLengthMenu":     "Mostrar _MENU_ registros",
+    "sZeroRecords":    "No se encontraron resultados",
+    "sEmptyTable":     "Ningún dato disponible en esta tabla",
+    "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+    "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+    "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+    "sSearch":         "Buscar:",
+    "sLoadingRecords": "Cargando...",
+    "oPaginate": {
+        "sFirst":    "Primero",
+        "sLast":     "Último",
+        "sNext":     "Siguiente",
+        "sPrevious": "Anterior"
+    },
+    "oAria": {
+        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+    },
+    "buttons": {
+      "copy": "Copiar",
+      "csv": "CSV",
+      "excel": "Excel",
+      "pdf": "PDF",
+      "print": "Imprimir",
+      "colvis": "Visibilidad de columnas"
+>>>>>>> 7f94fe327e38f2fec3184645c42af092370dd0cb
     }
 
+<<<<<<< HEAD
     $(function() {
         bsCustomFileInput.init();
     });
+=======
+  $(function () {
+    for (let i = 1; i <= 8; i++) {
+      $(`#table${i}`).DataTable({
+        "responsive": true,
+        "lengthChange": true, // Habilita el cambio de longitud
+        "pageLength": 10, // Configuración predeterminada de entradas mostradas
+        "lengthMenu": [10, 50, 100], // Opciones de cantidad de entradas
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        "language": spanishLangOptions
+      }).buttons().container().appendTo(`#table${i}_wrapper .col-md-6:eq(0)`);
+    }
+  });
+</script>
+
+
+
+
+ <script>
+$(function () {
+  bsCustomFileInput.init();
+});
+>>>>>>> 7f94fe327e38f2fec3184645c42af092370dd0cb
 </script>
