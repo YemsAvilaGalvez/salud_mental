@@ -161,6 +161,72 @@ function Listar_usuario_serverside() {
 }
 
 /**********************************************************************
+ 		  ABRIR MODAL EDITAR Y TRAER DATOS A LOS CAMPOS
+ ***********************************************************************/
+$("#tabla_usuario").on("click", ".editar", function () {
+  var data = tbl_usuario.row($(this).parents("tr")).data(); //tamaño de escritorio
+  if (tbl_usuario.row(this).child.isShown()) {
+    var data = tbl_usuario.row(this).data(); //para celular y usas el responsive datatable
+  }
+  $(".form-control").removeClass("is-invalid").removeClass("is-valid"); //remover las clases
+  $("#modal_editar_usuario").modal({ backdrop: "static", keyboard: false });
+  $("#modal_editar_usuario").modal("show"); //abrimos el modal
+
+  //jalamos los datos al presionar editar
+  document.getElementById("text_idusuario_editar").value = data[0]; //posisicion de la vista en el serviside
+  document.getElementById("text_usuario_editar").value = data[1];
+  $("#select_rol_editar").select2().val(data[3]).trigger("change.select2");
+});
+
+/**********************************************************************
+ 								  ACTIVAR USUARIO
+ ***********************************************************************/
+$("#tabla_usuario").on("click", ".activar", function () {
+  //campo activar tiene que ir en el boton
+  var data = tbl_usuario.row($(this).parents("tr")).data(); //tamaño de escritorio
+  if (tbl_usuario.row(this).child.isShown()) {
+    var data = tbl_usuario.row(this).data(); //para celular y usas el responsive datatable
+  }
+  Swal.fire({
+    title: "Desea activar el usuario?",
+    text: "",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, confirmar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Modificar_Estado(data[0], "ACTIVO"); //data 0 (id)
+    }
+  });
+});
+
+/**********************************************************************
+                                     DESACTIVAR USUARIO
+***********************************************************************/
+$("#tabla_usuario").on("click", ".desactivar", function () {
+  //campo activar tiene que ir en el boton
+  var data = tbl_usuario.row($(this).parents("tr")).data(); //tamaño de escritorio
+  if (tbl_usuario.row(this).child.isShown()) {
+    var data = tbl_usuario.row(this).data(); //para celular y usas el responsive datatable
+  }
+  Swal.fire({
+    title: "Desea Desactivar el usuario?",
+    text: "",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, confirmar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Modificar_Estado(data[0], "INACTIVO"); //data 0 (id)
+    }
+  });
+});
+
+/**********************************************************************
  						 ABRIR MODAL REGISTRAR USUARIO
  ***********************************************************************/
 function AbrirModalRegistroUsuario() {
@@ -187,11 +253,11 @@ function cargar_SelectRol() {
           "<option value='" + data[i][0] + "'>" + data[i][1] + "</option>";
       }
       document.getElementById("select_rol").innerHTML = llenardata;
-      //document.getElementById("select_rol_editar").innerHTML = llenardata;
+      document.getElementById("select_rol_editar").innerHTML = llenardata;
     } else {
       llenardata += "<option value=''>No se encontraron datos</option>";
       document.getElementById("select_rol").innerHTML = llenardata;
-      //document.getElementById("select_rol_editar").innerHTML = llenardata;
+      document.getElementById("select_rol_editar").innerHTML = llenardata;
     }
   });
 }
@@ -291,4 +357,76 @@ function ValidarCampos(usuario, clave) {
 function LimpiarModalUsuario() {
   document.getElementById("text_usuario").value = "";
   document.getElementById("text_clave").value = "";
+}
+
+/**********************************************************************
+ 								  MODIFICAR USUARIO
+ ***********************************************************************/
+function ModificarUsuario() {
+  //enviamos los datos del ajax al controlador y al onclick del boton editar
+  let id = document.getElementById("text_idusuario_editar").value;
+  let usuario = document.getElementById("text_usuario_editar").value;
+  let rol = document.getElementById("select_rol_editar").value;
+  if (usuario.length == 0) {
+    //validar que no esten vacios
+    ValidarCampos("text_usuario_editar", "select_rol_editar");
+    return Swal.fire(
+      "Mensaje de Advertencia",
+      "Tiene campos vacios",
+      "warning"
+    );
+  }
+
+  $.ajax({
+    url: "../controller/usuario/controlador_modificar_usuario.php",
+    type: "POST",
+    data: {
+      id: id, //le enviamos los campos al controlador
+      usuario: usuario,
+      rol: rol,
+    },
+  }).done(function (resp) {
+    if (resp > 0) {
+      Swal.fire(
+        "Mensaje de Confirmacion",
+        "Usuario actualizado",
+        "success"
+      ).then((value) => {
+        $("#modal_editar_usuario").modal("hide"); //ocultamos modal despues de registrar
+        tbl_usuario.ajax.reload(); //recargar dataTable
+      });
+    } else {
+      Swal.fire(
+        "Mensaje de Error",
+        "No se puede modificar el usuario",
+        "error"
+      );
+    }
+  });
+}
+
+/**********************************************************************
+ 						  MODIFICAR EL ESTADO DEL USUARIO
+ ***********************************************************************/
+function Modificar_Estado(id, estado) {
+  $.ajax({
+    url: "../controller/usuario/controlador_estado_usuario.php",
+    type: "POST",
+    data: {
+      id: id, //le enviamos los campos al controlador
+      estado: estado,
+    },
+  }).done(function (resp) {
+    if (resp > 0) {
+      Swal.fire(
+        "Mensaje de Confirmacion",
+        "Estado Actualizado",
+        "success"
+      ).then((value) => {
+        tbl_usuario.ajax.reload(); //recargar dataTable
+      });
+    } else {
+      Swal.fire("Mensaje de Error", "No se puede cambiar el estado", "error");
+    }
+  });
 }

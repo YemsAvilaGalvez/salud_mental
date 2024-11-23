@@ -100,16 +100,15 @@ class Modelo_Usuario extends conexionBD
     /**************************************************
  		      MODIFICAR USUARIOS
      **************************************************/
-    public function Modificar_Usuario($id, $usuario, $correo, $rol) //viene del controlador
+    public function Modificar_Usuario($id, $usuario, $rol) //viene del controlador
     {
         $c = conexionBD::conexionPDO();
 
-        $sql = "CALL SP_MODIFICAR_USUARIO(?,?,?,?)";
+        $sql = "CALL SP_MODIFICAR_USUARIO(?,?,?)";
         $query = $c->prepare($sql); //mandamos el precedure
         $query->bindParam(1, $id);
         $query->bindParam(2, $usuario); //enviamos los parametros seguun la posicion del procedure
-        $query->bindParam(3, $correo);
-        $query->bindParam(4, $rol);
+        $query->bindParam(3, $rol);
         $resultado = $query->execute();
         //solo de usa cuando no se retorna un valor en el procedure(actualizar)
         if ($resultado) {

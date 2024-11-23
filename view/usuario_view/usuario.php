@@ -108,6 +108,49 @@
                 <!-- /.modal-dialog -->
             </div>
             <!-- /.modal -->
+
+            <!-- modal editar -->
+            <div class="modal fade" id="modal_editar_usuario">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Editar Usuario</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" id="text_idusuario_editar" hidden="">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Nombre de usuario</label>
+                                        <input type="text" class="form-control" placeholder="Nombre de usuario" id="text_usuario_editar">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Rol</label>
+                                        <select class="select2" multiple="multiple" data-placeholder="Seleccione rol" id="select_rol_editar" style="width: 100%;">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-success" onclick="ModificarUsuario();">Modificar</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
         </div>
         <!-- /.row -->
     </div>
