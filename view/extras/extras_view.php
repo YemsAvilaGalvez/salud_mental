@@ -557,11 +557,11 @@
         });
         return false;
 
-=======
+//======
      </div>
-     <!-- /.container-fluid -->
+    // <!-- /.container-fluid -->
  </section>
- <!-- /.content -->
+ //<!-- /.content -->
  <script>
   const spanishLangOptions = {
     "sProcessing":     "Procesando...",
@@ -590,14 +590,14 @@
       "pdf": "PDF",
       "print": "Imprimir",
       "colvis": "Visibilidad de columnas"
->>>>>>> 7f94fe327e38f2fec3184645c42af092370dd0cb
+//>>>>>>> 7f94fe327e38f2fec3184645c42af092370dd0cb
     }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     $(function() {
         bsCustomFileInput.init();
     });
-=======
+//=======
   $(function () {
     for (let i = 1; i <= 8; i++) {
       $(`#table${i}`).DataTable({
@@ -620,5 +620,5 @@
 $(function () {
   bsCustomFileInput.init();
 });
->>>>>>> 7f94fe327e38f2fec3184645c42af092370dd0cb
+//>>>>>>> 7f94fe327e38f2fec3184645c42af092370dd0cb
 </script>
