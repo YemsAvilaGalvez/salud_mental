@@ -77,22 +77,164 @@
                         <div class="card-body">
                             <table id="tabla_consolidado" class="table table-bordered table-striped">
                                 <thead>
-                                    <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                <tr>
+                                        <th>ID Cita</th>
+                                        <th>Año</th>
+                                        <th>Mes</th>
+                                        <th>Dia</th>
+                                        <th>Fecha de Atención</th>
+                                        <th>Lote</th>
+                                        <th>N° Pag</th>
+                                        <th>N° Región</th>
+                                        <th>ID UPS</th>
+                                        <th>Descripción UPS</th>
+                                        <th>Descripción Sector</th>
+                                        <th>Descripción Disa</th>
+                                        <th>Descripción Red</th>
+                                        <th>Descripción MicroRed</th>
+                                        <th>Codigo Unico</th>
+                                        <th>Nombre Establecimiento</th>
+                                        <th>Abrev Tipo de Documento Paciente</th>
+                                        <th>N° de Documento Paciente</th>
+                                        <th>Apellido Paterno Paciente</th>
+                                        <th>Apellido Materno Paciente</th>
+                                        <th>Nombres Paciente</th>
+                                        <th>Fecha de Nacimiento Paciente</th>
+                                        <th>Genero</th>
+                                        <th>ID Etnia</th>
+                                        <th>Historia Clinica</th>
+                                        <th>Ficha Familiar</th>
+                                        <th>ID Financiador</th>
+                                        <th>Descripción Financiador</th>
+                                        <th>Descripción Pais</th>
+                                        <th>Abrev Tipo de Documento Personal</th>
+                                        <th>N° de Documento Personal</th>
+                                        <th>Apellido Paterno Personal</th>
+                                        <th>Apellido Materno Personal</th>
+                                        <th>Nombres Personal</th>
+                                        <th>Fecha de Nacimiento Personal</th>
+                                        <th>ID Condicion</th>
+                                        <th>Descripcion Condicion</th>
+                                        <th>ID Profesion</th>
+                                        <th>Descripcion Profesion</th>
+                                        <th>ID Colegio</th>
+                                        <th>Descripcion Colegio</th>
+                                        <th>N° de Colegiatura</th>
+                                        <th>Abrev Tipo de Documento Registrador</th>
+                                        <th>N° de Documento Registrador</th>
+                                        <th>Apellido Paterno Registrador</th>
+                                        <th>Apellido Materno Registrador</th>
+                                        <th>Nombres Registrador</th>
+                                        <th>Fecha de Nacimiento Registrador</th>
+                                        <th>ID Condicion Establecimiento</th>
+                                        <th>ID Condicion Servicio</th>
+                                        <th>Edad Reg</th>
+                                        <th>Año Acutal Paciente</th>
+                                        <th>Mes Acutal Paciente</th>
+                                        <th>Dia Acutal Paciente</th>
+                                        <th>ID Turno</th>
+                                        <th>Codigo Item</th>
+                                        <th>Descripcion Item</th>
+                                        <th>Tipo de Diagnostico</th>
+                                        <th>valor Lab</th>
+                                        <th>ID Correlativo</th>
+                                        <th>Peso</th>
+                                        <th>Talla</th>
+                                        <th>Hemoglobina</th>
+                                        <th>Talla</th>
+                                        <th>Talla</th>
+                                        <th>Talla</th>
+                                        <th>Talla</th>
+                                        <th>Talla</th>
+                                        <th>Tipo de Diagnostico</th>
+                                        <th>Perimetro Abdominal</th>
+                                        <th>Perimetro Cefalico</th>
+                                        <th>ID otra Condición</th>
+                                        <th>Fecha Ultima Regla</th>
+                                        <th>Fecha Solicitud HB</th>
+                                        <th>Fecha Registro</th>
+                                        <th>Fecha Modificación</th>
                                     </tr>
                                 </thead>
                                 
                                 <tfoot>
-                                    <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
+                                <tr>
+                                        <th>ID Cita</th>
+                                        <th>Año</th>
+                                        <th>Mes</th>
+                                        <th>Dia</th>
+                                        <th>Fecha de Atención</th>
+                                        <th>Lote</th>
+                                        <th>N° Pag</th>
+                                        <th>N° Región</th>
+                                        <th>ID UPS</th>
+                                        <th>Descripción UPS</th>
+                                        <th>Descripción Sector</th>
+                                        <th>Descripción Disa</th>
+                                        <th>Descripción Red</th>
+                                        <th>Descripción MicroRed</th>
+                                        <th>Codigo Unico</th>
+                                        <th>Nombre Establecimiento</th>
+                                        <th>Abrev Tipo de Documento Paciente</th>
+                                        <th>N° de Documento Paciente</th>
+                                        <th>Apellido Paterno Paciente</th>
+                                        <th>Apellido Materno Paciente</th>
+                                        <th>Nombres Paciente</th>
+                                        <th>Fecha de Nacimiento Paciente</th>
+                                        <th>Genero</th>
+                                        <th>ID Etnia</th>
+                                        <th>Historia Clinica</th>
+                                        <th>Ficha Familiar</th>
+                                        <th>ID Financiador</th>
+                                        <th>Descripción Financiador</th>
+                                        <th>Descripción Pais</th>
+                                        <th>Abrev Tipo de Documento Personal</th>
+                                        <th>N° de Documento Personal</th>
+                                        <th>Apellido Paterno Personal</th>
+                                        <th>Apellido Materno Personal</th>
+                                        <th>Nombres Personal</th>
+                                        <th>Fecha de Nacimiento Personal</th>
+                                        <th>ID Condicion</th>
+                                        <th>Descripcion Condicion</th>
+                                        <th>ID Profesion</th>
+                                        <th>Descripcion Profesion</th>
+                                        <th>ID Colegio</th>
+                                        <th>Descripcion Colegio</th>
+                                        <th>N° de Colegiatura</th>
+                                        <th>Abrev Tipo de Documento Registrador</th>
+                                        <th>N° de Documento Registrador</th>
+                                        <th>Apellido Paterno Registrador</th>
+                                        <th>Apellido Materno Registrador</th>
+                                        <th>Nombres Registrador</th>
+                                        <th>Fecha de Nacimiento Registrador</th>
+                                        <th>ID Condicion Establecimiento</th>
+                                        <th>ID Condicion Servicio</th>
+                                        <th>Edad Reg</th>
+                                        <th>Año Acutal Paciente</th>
+                                        <th>Mes Acutal Paciente</th>
+                                        <th>Dia Acutal Paciente</th>
+                                        <th>ID Turno</th>
+                                        <th>Codigo Item</th>
+                                        <th>Descripcion Item</th>
+                                        <th>Tipo de Diagnostico</th>
+                                        <th>valor Lab</th>
+                                        <th>ID Correlativo</th>
+                                        <th>Peso</th>
+                                        <th>Talla</th>
+                                        <th>Hemoglobina</th>
+                                        <th>Talla</th>
+                                        <th>Talla</th>
+                                        <th>Talla</th>
+                                        <th>Talla</th>
+                                        <th>Talla</th>
+                                        <th>Tipo de Diagnostico</th>
+                                        <th>Perimetro Abdominal</th>
+                                        <th>Perimetro Cefalico</th>
+                                        <th>ID otra Condición</th>
+                                        <th>Fecha Ultima Regla</th>
+                                        <th>Fecha Solicitud HB</th>
+                                        <th>Fecha Registro</th>
+                                        <th>Fecha Modificación</th>
                                     </tr>
                                 </tfoot>
                             </table>
