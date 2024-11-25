@@ -1,40 +1,47 @@
 <?php
-require 'vendor/autoload.php';
-require 'conn.php';
-//$mysqli = new mysqli('localhost','root','','dbsertec');
-class MyReadFilter implements \PhpOffice\PhpSpreadsheet\Reader\IReadFilter
-{
+require '../vendor/autoload.php';
+require 'conn.php'; // Archivo de conexión
 
-    public function readCell($columnAddress, $row, $worksheetName = '')
-    {
-        // Read title row and rows 20 - 30
-        if ($row > 1) {
-            return true;
-        }
-        return false;
-    }
+if (isset($_FILES['excel']) && $_FILES['excel']['error'] === UPLOAD_ERR_OK) {
+    echo "Archivo recibido correctamente: " . $_FILES['excel']['name'];
+} else {
+    echo "Error al recibir el archivo.";
 }
-$reader = new \PhpOffice\PhpSpreadsheet\Reader\Xls();
-$inputFileName = $_FILES['excel']['tmp_name'];     //'producto.xlsx';
 
-/**  Identify the type of $inputFileName  **/
-$inputFileType = \PhpOffice\PhpSpreadsheet\IOFactory::identify($inputFileName);
-/**  Create a new Reader of the type that has been identified  **/
 
-$reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader($inputFileType);
+if (isset($_FILES['excel']) && $_FILES['excel']['error'] === UPLOAD_ERR_OK) {
+    $inputFileName = $_FILES['excel']['tmp_name'];
 
-//leo la funcion para obtener los datos de una celda en especifica
-$reader->setReadFilter(new MyReadFilter());
+    try {
+        // Leer el archivo Excel
+        $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile($inputFileName);
+        $spreadsheet = $reader->load($inputFileName);
+        $cantidad = $spreadsheet->getActiveSheet()->toArray();
 
-/**  Load $inputFileName to a Spreadsheet Object  **/
-$spreadsheet = $reader->load($inputFileName);
-$cantidad = $spreadsheet->getActiveSheet()->toArray();
-foreach ($cantidad as $row) {
+        foreach ($cantidad as $index => $row) {
+            if (!empty($row[0])) {
+                // Escapar los valores
+                $Id_Etnia = mysqli_real_escape_string($mysqli, $row[0]);
+                $Descripcion_Etnia = mysqli_real_escape_string($mysqli, $row[1]);
 
-    if ($row[0] != '') {
-        $consulta = "INSERT INTO INSERT INTO cpms (Codigo_Item,Descripcion_Item) VALUES 
-		('$row[0]','$row[1]','$row[2]')";
+                // Crear consulta
+                $consulta = "INSERT INTO etnia (Id_Etnia, Descripcion_Etnia) 
+                             VALUES ('$row[0]', '$row[1]')";
 
-        $resul = $mysqli->query($consulta);
+                // Ejecutar consulta y comprobar errores
+                if (!mysqli_query($mysqli, $consulta)) {
+                    error_log("Error al insertar en la fila $index: " . mysqli_error($mysqli));
+                } else {
+                    error_log("Fila $index insertada correctamente.");
+                }
+            }
+        }
+        echo "Datos importados correctamente.";
+    } catch (Exception $e) {
+        error_log("Error al procesar el archivo Excel: " . $e->getMessage());
+        echo "Error al procesar el archivo Excel.";
     }
+} else {
+    error_log("Error al recibir el archivo: " . ($_FILES['excel']['error'] ?? 'Archivo no enviado'));
+    echo "Error al recibir el archivo.";
 }

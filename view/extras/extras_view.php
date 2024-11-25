@@ -79,7 +79,7 @@
                                                 <div class="card-body">
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input type="file" class="custom-file-input" id="exampleInputFile" id="text_excel_etnia" accept=".xls, .xlsx, .csv">
+                                                            <input type="file" class="custom-file-input" id="text_excel_etnia" accept=".xls, .xlsx, .csv">
                                                             <label class="custom-file-label" for="exampleInputFile"><span>Agregar archivo <i><b>Etnia</b></i> </span></label>
                                                         </div>
                                                     </div>
@@ -139,11 +139,11 @@
                                                 <div class="card-body">
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                            <input type="file" class="custom-file-input" id="text_excel_documento" accept=".xls, .xlsx, .csv">
                                                             <label class="custom-file-label" for="exampleInputFile"><span>Agregar archivo <i><b>Tipo de Documento </b></i> </span></label>
                                                         </div>
                                                     </div>
-                                                    <button type="button" class="btn btn-block btn-outline-primary mt-3" onclick="">Registrar</button>
+                                                    <button type="button" class="btn btn-block btn-outline-primary mt-3" onclick="cargar_excel_documento();">Registrar</button>
 
                                                 </div>
                                                 <!-- /.card-body -->
@@ -155,7 +155,7 @@
                                     <!-- /.row -->
                                 </div>
 
-                                <table id="table2" class="table table-bordered table-hover">
+                                <table id="tabla_documento" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -197,11 +197,11 @@
                                                 <div class="card-body">
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                            <input type="file" class="custom-file-input" id="text_excel_financiador" accept=".xls, .xlsx, .csv">
                                                             <label class="custom-file-label" for="exampleInputFile"><span>Agregar archivo <i><b>Financiador</b></i> </span></label>
                                                         </div>
                                                     </div>
-                                                    <button type="button" class="btn btn-block btn-outline-primary mt-3" onclick="">Registrar</button>
+                                                    <button type="button" class="btn btn-block btn-outline-primary mt-3" onclick="cargar_excel_financiador();">Registrar</button>
 
                                                 </div>
                                                 <!-- /.card-body -->
@@ -213,7 +213,7 @@
                                     <!-- /.row -->
                                 </div>
 
-                                <table id="table3" class="table table-bordered table-hover">
+                                <table id="tabla_financiador" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -253,11 +253,11 @@
                                                 <div class="card-body">
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                            <input type="file" class="custom-file-input" id="text_excel_cpms" accept=".xls, .xlsx, .csv">
                                                             <label class="custom-file-label" for="exampleInputFile"><span>Agregar archivo <i><b>CPMS</b></i> </span></label>
                                                         </div>
                                                     </div>
-                                                    <button type="button" class="btn btn-block btn-outline-primary mt-3" onclick="">Registrar</button>
+                                                    <button type="button" class="btn btn-block btn-outline-primary mt-3" onclick="cargar_excel_cpms();">Registrar</button>
 
                                                 </div>
                                                 <!-- /.card-body -->
@@ -269,7 +269,7 @@
                                     <!-- /.row -->
                                 </div>
 
-                                <table id="table4" class="table table-bordered table-hover">
+                                <table id="tabla_cmps" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -519,28 +519,34 @@
                 </div>
             </div>
         </div>
-
-
-<<<<<<< HEAD
     </div>
     <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
 
 <script>
+    $(function() {
+        bsCustomFileInput.init();
+    });
     Listar_Etnia();
+    Listar_Documento();
+    Listar_Financiador();
+    Listar_Cpms();
+
     /**************************************************
     IMPORTAR DESDE EXCEL
     ****************************************************/
     function cargar_excel_etnia() {
-        let archivo = document.getElementById("text_excel_etnia").value;
-        if (archivo.length == 0) {
-            return Swal.fire("Mensaje de Advertencia", "Selecciones un Archivo", "warning");
+        // Obtener el archivo seleccionado
+        let archivo = document.getElementById("text_excel_etnia").files[0];
+        if (!archivo) {
+            return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
         }
 
         let formData = new FormData();
-        let excel = $("#text_excel_etnia")[0].files[0];
-        formData.append('excel', excel);
+        formData.append('excel', archivo); // Añadir el archivo al FormData
+
+        // Realizar la solicitud AJAX
         $.ajax({
             url: '../document/excel_import_etnia.php',
             type: 'POST',
@@ -548,77 +554,109 @@
             contentType: false,
             processData: false,
             success: function(resp) {
-                Swal.fire("Mensaje de Confirmacion", "Importacion de Productos Exitosa", "success")
-                document.getElementById('text_excel_etnia').value = "";
-
-
+                Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
+                document.getElementById('text_excel_etnia').value = null; // Limpiar el campo
+                // Recargar la página
+                tbl_etnia.ajax.reload();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
             }
-
         });
-        return false;
 
-//======
-     </div>
-    // <!-- /.container-fluid -->
- </section>
- //<!-- /.content -->
- <script>
-  const spanishLangOptions = {
-    "sProcessing":     "Procesando...",
-    "sLengthMenu":     "Mostrar _MENU_ registros",
-    "sZeroRecords":    "No se encontraron resultados",
-    "sEmptyTable":     "Ningún dato disponible en esta tabla",
-    "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-    "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-    "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-    "sSearch":         "Buscar:",
-    "sLoadingRecords": "Cargando...",
-    "oPaginate": {
-        "sFirst":    "Primero",
-        "sLast":     "Último",
-        "sNext":     "Siguiente",
-        "sPrevious": "Anterior"
-    },
-    "oAria": {
-        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-    },
-    "buttons": {
-      "copy": "Copiar",
-      "csv": "CSV",
-      "excel": "Excel",
-      "pdf": "PDF",
-      "print": "Imprimir",
-      "colvis": "Visibilidad de columnas"
-//>>>>>>> 7f94fe327e38f2fec3184645c42af092370dd0cb
+        return false; // Prevenir comportamiento predeterminado
+    }
+    
+    function cargar_excel_documento() {
+        // Obtener el archivo seleccionado
+        let archivo = document.getElementById("text_excel_documento").files[0];
+        if (!archivo) {
+            return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
+        }
+
+        let formData = new FormData();
+        formData.append('excel', archivo); // Añadir el archivo al FormData
+
+        // Realizar la solicitud AJAX
+        $.ajax({
+            url: '../document/excel_import_documento.php',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(resp) {
+                Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
+                document.getElementById('text_excel_documento').reset(); // Limpiar el campo
+                // Recargar la página
+                tbl_documento.ajax.reload();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
+            }
+        });
+
+        return false; // Prevenir comportamiento predeterminado
     }
 
-//<<<<<<< HEAD
-    $(function() {
-        bsCustomFileInput.init();
-    });
-//=======
-  $(function () {
-    for (let i = 1; i <= 8; i++) {
-      $(`#table${i}`).DataTable({
-        "responsive": true,
-        "lengthChange": true, // Habilita el cambio de longitud
-        "pageLength": 10, // Configuración predeterminada de entradas mostradas
-        "lengthMenu": [10, 50, 100], // Opciones de cantidad de entradas
-        "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-        "language": spanishLangOptions
-      }).buttons().container().appendTo(`#table${i}_wrapper .col-md-6:eq(0)`);
+    function cargar_excel_financiador() {
+        // Obtener el archivo seleccionado
+        let archivo = document.getElementById("text_excel_financiador").files[0];
+        if (!archivo) {
+            return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
+        }
+
+        let formData = new FormData();
+        formData.append('excel', archivo); // Añadir el archivo al FormData
+
+        // Realizar la solicitud AJAX
+        $.ajax({
+            url: '../document/excel_import_financiador.php',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(resp) {
+                Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
+                document.getElementById('text_excel_financiador').reset(); // Limpiar el campo
+                // Recargar la página
+                tbl_financiador.ajax.reload();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
+            }
+        });
+
+        return false; // Prevenir comportamiento predeterminado
     }
-  });
-</script>
 
+    function cargar_excel_cpms() {
+        // Obtener el archivo seleccionado
+        let archivo = document.getElementById("text_excel_cpms").files[0];
+        if (!archivo) {
+            return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
+        }
 
+        let formData = new FormData();
+        formData.append('excel', archivo); // Añadir el archivo al FormData
 
+        // Realizar la solicitud AJAX
+        $.ajax({
+            url: '../document/excel_import_cpms.php',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(resp) {
+                Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
+                document.getElementById('text_excel_cpms').reset(); // Limpiar el campo
+                // Recargar la página
+                tbl_cpms.ajax.reload();
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
+            }
+        });
 
- <script>
-$(function () {
-  bsCustomFileInput.init();
-});
-//>>>>>>> 7f94fe327e38f2fec3184645c42af092370dd0cb
+        return false; // Prevenir comportamiento predeterminado
+    }
 </script>

@@ -1,3 +1,4 @@
+<script src="../js/nominal.js?rev=<?php echo time(); ?>"></script>
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
@@ -68,13 +69,13 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="button" class="btn btn-block btn-primary" ondblclick="ConsolidarInformacion();">Consolidar Información</button>
+                                    <button type="button" class="btn btn-block btn-primary" onclick="ConsolidarInformacion();">Consolidar Información</button>
                                 </div>
                             </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table id="tabla_consolidado" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>Rendering engine</th>
@@ -520,12 +521,130 @@
             bsCustomFileInput.init();
         });
 
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        });
+        /**************************************************
+    IMPORTAR DESDE EXCEL
+    ****************************************************/
+        function ConsolidarInformacion() {
+            // Obtener el archivo seleccionado
+            let archivo = document.getElementById("filePaciente").files[0];
+            if (!archivo) {
+                return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
+            }
+
+            let formData = new FormData();
+            formData.append('excel', archivo); // Añadir el archivo al FormData
+
+            // Realizar la solicitud AJAX
+            $.ajax({
+                url: '../document/excel_import_paciente.php',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(resp) {
+                    Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
+                    document.getElementById('filePaciente').value = null; // Limpiar el campo
+                    // Recargar la página
+                    tbl_consolidado.ajax.reload();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
+                }
+            });
+
+            return false; // Prevenir comportamiento predeterminado
+        }
+
+        function ConsolidarInformacion() {
+            // Obtener el archivo seleccionado
+            let archivo = document.getElementById("filePersonal").files[0];
+            if (!archivo) {
+                return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
+            }
+
+            let formData = new FormData();
+            formData.append('excel', archivo); // Añadir el archivo al FormData
+
+            // Realizar la solicitud AJAX
+            $.ajax({
+                url: '../document/excel_import_personal.php',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(resp) {
+                    Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
+                    document.getElementById('filePersonal').value = null; // Limpiar el campo
+                    // Recargar la página
+                    tbl_consolidado.ajax.reload();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
+                }
+            });
+
+            return false; // Prevenir comportamiento predeterminado
+        }
+
+        function ConsolidarInformacion() {
+            // Obtener el archivo seleccionado
+            let archivo = document.getElementById("fileRegistrador").files[0];
+            if (!archivo) {
+                return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
+            }
+
+            let formData = new FormData();
+            formData.append('excel', archivo); // Añadir el archivo al FormData
+
+            // Realizar la solicitud AJAX
+            $.ajax({
+                url: '../document/excel_import_registrador.php',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(resp) {
+                    Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
+                    document.getElementById('fileRegistrador').value = null; // Limpiar el campo
+                    // Recargar la página
+                    tbl_consolidado.ajax.reload();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
+                }
+            });
+
+            return false; // Prevenir comportamiento predeterminado
+        }
+
+        function ConsolidarInformacion() {
+            // Obtener el archivo seleccionado
+            let archivo = document.getElementById("fileNominal").files[0];
+            if (!archivo) {
+                return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
+            }
+
+            let formData = new FormData();
+            formData.append('excel', archivo); // Añadir el archivo al FormData
+
+            // Realizar la solicitud AJAX
+            $.ajax({
+                url: '../document/excel_import_nominal.php',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(resp) {
+                    Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
+                    document.getElementById('fileNominal').value = null; // Limpiar el campo
+                    // Recargar la página
+                    tbl_consolidado.ajax.reload();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
+                }
+            });
+
+            return false; // Prevenir comportamiento predeterminado
+        }
     </script>

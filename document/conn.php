@@ -1,11 +1,16 @@
 <?php
-//header("Content-Type: text/html;charset=utf-8");
 $usuario  = "root";
 $password = "";
 $servidor = "localhost";
 $basededatos = "bdmental";
-$con = mysqli_connect($servidor, $usuario, $password) or die("No se ha podido conectar al Servidor");
-mysqli_query($con,"SET SESSION collation_connection ='utf8mb4_general_ci'");
-$db = mysqli_select_db($con, $basededatos) or die("Upps! Error en conectar a la Base de Datos");
 
-?>
+// Crear la conexión con estilo orientado a objetos
+$mysqli = new mysqli($servidor, $usuario, $password, $basededatos);
+
+// Verificar si hay errores en la conexión
+if ($mysqli->connect_error) {
+    die("Error de conexión: " . $mysqli->connect_error);
+}
+
+// Configurar collation
+$mysqli->query("SET SESSION collation_connection ='utf8mb4_general_ci'");
