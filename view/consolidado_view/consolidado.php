@@ -86,7 +86,7 @@
                         <div class="card-body">
                             <table id="tabla_consolidado" class="table table-bordered table-striped">
                                 <thead>
-                                <tr>
+                                    <tr>
                                         <th>ID Cita</th>
                                         <th>Año</th>
                                         <th>Mes</th>
@@ -165,9 +165,9 @@
                                         <th>Fecha Modificación</th>
                                     </tr>
                                 </thead>
-                                
+
                                 <tfoot>
-                                <tr>
+                                    <tr>
                                         <th>ID Cita</th>
                                         <th>Año</th>
                                         <th>Mes</th>
@@ -251,31 +251,7 @@
                         <!-- /.card-body -->
 
                     </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <table id="tabla_consolidado" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                </tr>
-                            </thead>
 
-                            <tfoot>
-                                <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
             </div>

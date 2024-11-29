@@ -44,31 +44,27 @@ function Inciar_Sesion() {
       }).done(function (r) {
         let timerInterval;
         Swal.fire({
-          title: "Bienvenido al Sistema",
-          html: "Cargando <b></b> .",
-          timer: 10,
-          heightAuto: false,
+          title: "Bienvenido al Sistema de Control de Pacientes",
+          html: "Seras redireccionado en <b></b> millisegundos.",
+          timer: 2000,
           timerProgressBar: true,
-          allowOutsideClick: false,
+          heightAuto: false,
           didOpen: () => {
             Swal.showLoading();
             const b = Swal.getHtmlContainer().querySelector("b");
             timerInterval = setInterval(() => {
               b.textContent = Swal.getTimerLeft();
-            }, 150);
+            }, 100);
           },
           willClose: () => {
             clearInterval(timerInterval);
           },
         }).then((result) => {
-          /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
             location.reload();
           }
         });
       });
-
-      //Swal.fire('Mensaje de Confirmacion','Logueo exitoso','success');
     } else {
       Swal.fire("Mensaje de Error", "Usuario o Clave incorrecto", "error");
     }
@@ -264,7 +260,7 @@ function cargar_SelectRol() {
     type: "POST",
   }).done(function (resp) {
     let data = JSON.parse(resp); //POSICION DE LA FILA Y COLUMNA
-    let llenardata = "<option value=''>Seleccione</option>";
+    let llenardata = "<option value=''>Seleccione Rol</option>";
     if (data.length > 0) {
       for (let i = 0; i < data.length; i++) {
         llenardata +=
@@ -375,6 +371,7 @@ function ValidarCampos(usuario, clave) {
 function LimpiarModalUsuario() {
   document.getElementById("text_usuario").value = "";
   document.getElementById("text_clave").value = "";
+  $("#select_rol").select2().val("").trigger("change.select2");
 }
 
 /**********************************************************************

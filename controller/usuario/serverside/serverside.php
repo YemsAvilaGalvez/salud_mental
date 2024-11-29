@@ -1,5 +1,5 @@
 <?php
-include '../../../model/conexcion.php';
+include '../../../model/conexion.php';
 class TableDataUsuario extends conexionBD{ 
     private $_db;
     public function __construct() { 

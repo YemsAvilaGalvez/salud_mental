@@ -85,6 +85,7 @@ if (isset($_SESSION['S_IDUSUARIO'])) { //si existe
     <script src="view/assets/dist/js/adminlte.min.js"></script>
     <!-- alert -->
     <script src="utilitarios/sweetalert.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- js usuario -->
     <script src="js/usuario.js?rev=<?php echo time(); ?>"></script>
 

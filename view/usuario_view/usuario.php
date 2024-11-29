@@ -90,7 +90,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label>Rol</label>
-                                        <select class="select2" multiple="multiple" data-placeholder="Seleccione rol" id="select_rol" style="width: 100%;">
+                                        <select class="form-control select2" id="select_rol" style="width: 100%;">
                                         </select>
                                     </div>
                                 </div>

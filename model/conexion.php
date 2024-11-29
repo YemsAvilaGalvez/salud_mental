@@ -12,7 +12,7 @@ class conexionBD
         $host     =  'localhost';
         $usuario  =  'root';
         $clave    =  '';
-        $dbname   =  'bdmental';
+        $dbname   =  'salud_mental';
         try {
             $pdo = new PDO("mysql:host=$host; dbname=$dbname", $usuario, $clave);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

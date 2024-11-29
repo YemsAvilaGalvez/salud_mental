@@ -1,6 +1,6 @@
 <?php
 //comunica con el servidor para consultar
-require_once 'conexcion.php';
+require_once 'conexion.php';
 
 /**
  * 
