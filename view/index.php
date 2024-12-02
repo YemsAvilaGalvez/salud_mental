@@ -109,7 +109,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnisticos_view/id01.php')">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id01.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID01</p>
                                     </a>
