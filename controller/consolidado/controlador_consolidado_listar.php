@@ -1,8 +1,8 @@
 <?php
 
-require '../../model/modelo_extras.php';
-$MP = new Modelo_Extras(); //instaciamops
-$consulta = $MP->Listar_Financiador(); //llamamos al modelo
+require '../../model/modelo_consolidado.php';
+$MP = new Modelo_Consolidado(); //instaciamops
+$consulta = $MP->Listar_Consolidado(); //llamamos al modelo
 if ($consulta) {
     echo json_encode($consulta);
 } else {

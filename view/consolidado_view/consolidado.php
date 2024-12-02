@@ -1,4 +1,4 @@
-<script src="../js/nominal.js?rev=<?php echo time(); ?>"></script>
+<script src="../js/consolidado.js?rev=<?php echo time(); ?>"></script>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -24,61 +24,11 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-3">
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Paciente</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="filePaciente" name="filePaciente">
-                                            <label class="custom-file-label" for="exampleInputFile">Subir Archivo</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="button" class="btn btn-block btn-primary" onclick="ConsolidarPaciente();">Consolidar Información</button>
-                                </div>
+                            <div class="col-lg-10">
+                                <input class="form-control" type="file" id="text_archivo" accept=".xls, .xlsx, .csv">
                             </div>
-                            <div class="col-3">
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Personal</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="filePersonal" name="filePersonal">
-                                            <label class="custom-file-label" for="exampleInputFile">Subir Archivo</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="button" class="btn btn-block btn-primary" onclick="ConsolidarPersonal();">Consolidar Información</button>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Registrador</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="fileRegistrador" name="fileRegistrador">
-                                            <label class="custom-file-label" for="exampleInputFile">Subir Archivo</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="button" class="btn btn-block btn-primary" onclick="ConsolidarRegistrador();">Consolidar Información</button>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group">
-                                    <label for="exampleInputFile">Nominal</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="fileNominal" name="fileNominal">
-                                            <label class="custom-file-label" for="exampleInputFile">Subir Archivo</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="button" class="btn btn-block btn-primary" onclick="ConsolidarNominal();">Consolidar Información</button>
-                                </div>
+                            <div class="col-lg-2">
+                                <button type="submit" class="btn btn-primary" onclick="cargar_excel()">Cargar Consolidado</button>
                             </div>
                         </div>
 
@@ -87,163 +37,143 @@
                             <table id="tabla_consolidado" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>ID Cita</th>
-                                        <th>Año</th>
-                                        <th>Mes</th>
-                                        <th>Dia</th>
-                                        <th>Fecha de Atención</th>
+                                        <th>#</th>
+                                        <th>Id_Cita</th>
+                                        <th>Fecha_Atencion</th>
                                         <th>Lote</th>
-                                        <th>N° Pag</th>
-                                        <th>N° Región</th>
-                                        <th>ID UPS</th>
-                                        <th>Descripción UPS</th>
-                                        <th>Descripción Sector</th>
-                                        <th>Descripción Disa</th>
-                                        <th>Descripción Red</th>
-                                        <th>Descripción MicroRed</th>
-                                        <th>Codigo Unico</th>
-                                        <th>Nombre Establecimiento</th>
-                                        <th>Abrev Tipo de Documento Paciente</th>
-                                        <th>N° de Documento Paciente</th>
-                                        <th>Apellido Paterno Paciente</th>
-                                        <th>Apellido Materno Paciente</th>
-                                        <th>Nombres Paciente</th>
-                                        <th>Fecha de Nacimiento Paciente</th>
+                                        <th>Num_Pag</th>
+                                        <th>Num_Reg</th>
+                                        <th>Id_Ups</th>
+                                        <th>Descripcion_Ups</th>
+                                        <th>Descripcion_Sector</th>
+                                        <th>Descripcion_Disa</th>
+                                        <th>Descripcion_Red</th>
+                                        <th>Descripcion_MicroRed</th>
+                                        <th>Codigo_Unico</th>
+                                        <th>Nombre_Establecimiento</th>
+                                        <th>Abrev_Tipo_Doc_Paciente</th>
+                                        <th>Numero_Documento_Paciente</th>
+                                        <th>Apellido_Paciente</th>
+                                        <th>Nombres_Paciente</th>
+                                        <th>Fecha_Nacimiento_Paciente</th>
                                         <th>Genero</th>
-                                        <th>ID Etnia</th>
-                                        <th>Historia Clinica</th>
-                                        <th>Ficha Familiar</th>
-                                        <th>ID Financiador</th>
-                                        <th>Descripción Financiador</th>
-                                        <th>Descripción Pais</th>
-                                        <th>Abrev Tipo de Documento Personal</th>
-                                        <th>N° de Documento Personal</th>
-                                        <th>Apellido Paterno Personal</th>
-                                        <th>Apellido Materno Personal</th>
-                                        <th>Nombres Personal</th>
-                                        <th>Fecha de Nacimiento Personal</th>
-                                        <th>ID Condicion</th>
-                                        <th>Descripcion Condicion</th>
-                                        <th>ID Profesion</th>
-                                        <th>Descripcion Profesion</th>
-                                        <th>ID Colegio</th>
-                                        <th>Descripcion Colegio</th>
-                                        <th>N° de Colegiatura</th>
-                                        <th>Abrev Tipo de Documento Registrador</th>
-                                        <th>N° de Documento Registrador</th>
-                                        <th>Apellido Paterno Registrador</th>
-                                        <th>Apellido Materno Registrador</th>
-                                        <th>Nombres Registrador</th>
-                                        <th>Fecha de Nacimiento Registrador</th>
-                                        <th>ID Condicion Establecimiento</th>
-                                        <th>ID Condicion Servicio</th>
-                                        <th>Edad Reg</th>
-                                        <th>Año Acutal Paciente</th>
-                                        <th>Mes Acutal Paciente</th>
-                                        <th>Dia Acutal Paciente</th>
-                                        <th>ID Turno</th>
-                                        <th>Codigo Item</th>
-                                        <th>Descripcion Item</th>
-                                        <th>Tipo de Diagnostico</th>
-                                        <th>valor Lab</th>
-                                        <th>ID Correlativo</th>
+                                        <th>Id_Etnia</th>
+                                        <th>Descripcion_Etnia</th>
+                                        <th>Historia_Clinica</th>
+                                        <th>Ficha_Familiar</th>
+                                        <th>Id_Financiador</th>
+                                        <th>Descripcion_Financiador</th>
+                                        <th>Descripcion_Pais</th>
+                                        <th>Abrev_Tipo_Doc_Personal</th>
+                                        <th>Numero_Documento_Personal</th>
+                                        <th>Apellido_Personal</th>
+                                        <th>Nombres_Personal</th>
+                                        <th>Fecha_Nacimiento_Personal</th>
+                                        <th>Id_Condicion</th>
+                                        <th>Descripcion_Condicion</th>
+                                        <th>Id_Profesion</th>
+                                        <th>Descripcion_Profesion</th>
+                                        <th>Id_Colegio</th>
+                                        <th>Descripcion_Colegio</th>
+                                        <th>Numero_Colegiatura</th>
+                                        <th>Abrev_Tipo_Doc_Registrador</th>
+                                        <th>Numero_Documento_Registrador</th>
+                                        <th>Apellido_Registrador</th>
+                                        <th>Nombres_Registrador</th>
+                                        <th>Fecha_Nacimiento_Registrador</th>
+                                        <th>Id_Condicion_Establecimiento</th>
+                                        <th>Id_Condicion_Servicio</th>
+                                        <th>Edad_Reg</th>
+                                        <th>Tipo_Edad</th>
+                                        <th>Fecha_Actual_Paciente</th>
+                                        <th>Id_Turno</th>
+                                        <th>Codigo_Item</th>
+                                        <th>Descripcion_Item</th>
+                                        <th>Tipo_Diagnostico</th>
+                                        <th>Valor_Lab</th>
+                                        <th>Id_Correlativo</th>
                                         <th>Peso</th>
                                         <th>Talla</th>
                                         <th>Hemoglobina</th>
-                                        <th>Talla</th>
-                                        <th>Talla</th>
-                                        <th>Talla</th>
-                                        <th>Talla</th>
-                                        <th>Talla</th>
-                                        <th>Tipo de Diagnostico</th>
-                                        <th>Perimetro Abdominal</th>
-                                        <th>Perimetro Cefalico</th>
-                                        <th>ID otra Condición</th>
-                                        <th>Fecha Ultima Regla</th>
-                                        <th>Fecha Solicitud HB</th>
-                                        <th>Fecha Registro</th>
-                                        <th>Fecha Modificación</th>
+                                        <th>Perimetro_Abdominal</th>
+                                        <th>Perimetro_Cefalico</th>
+                                        <th>Descripcion_Otra_Condicion</th>
+                                        <th>Fecha_Ultima_Regla</th>
+                                        <th>Fecha_Solicitud_Hb</th>
+                                        <th>Fecha_Resultado_Hb</th>
+                                        <th>Fecha_Registro</th>
+                                        <th>Fecha_Modificacion</th>
                                     </tr>
                                 </thead>
 
                                 <tfoot>
                                     <tr>
-                                        <th>ID Cita</th>
-                                        <th>Año</th>
-                                        <th>Mes</th>
-                                        <th>Dia</th>
-                                        <th>Fecha de Atención</th>
+                                        <th>#</th>
+                                        <th>Id_Cita</th>
+                                        <th>Fecha_Atencion</th>
                                         <th>Lote</th>
-                                        <th>N° Pag</th>
-                                        <th>N° Región</th>
-                                        <th>ID UPS</th>
-                                        <th>Descripción UPS</th>
-                                        <th>Descripción Sector</th>
-                                        <th>Descripción Disa</th>
-                                        <th>Descripción Red</th>
-                                        <th>Descripción MicroRed</th>
-                                        <th>Codigo Unico</th>
-                                        <th>Nombre Establecimiento</th>
-                                        <th>Abrev Tipo de Documento Paciente</th>
-                                        <th>N° de Documento Paciente</th>
-                                        <th>Apellido Paterno Paciente</th>
-                                        <th>Apellido Materno Paciente</th>
-                                        <th>Nombres Paciente</th>
-                                        <th>Fecha de Nacimiento Paciente</th>
+                                        <th>Num_Pag</th>
+                                        <th>Num_Reg</th>
+                                        <th>Id_Ups</th>
+                                        <th>Descripcion_Ups</th>
+                                        <th>Descripcion_Sector</th>
+                                        <th>Descripcion_Disa</th>
+                                        <th>Descripcion_Red</th>
+                                        <th>Descripcion_MicroRed</th>
+                                        <th>Codigo_Unico</th>
+                                        <th>Nombre_Establecimiento</th>
+                                        <th>Abrev_Tipo_Doc_Paciente</th>
+                                        <th>Numero_Documento_Paciente</th>
+                                        <th>Apellido_Paciente</th>
+                                        <th>Nombres_Paciente</th>
+                                        <th>Fecha_Nacimiento_Paciente</th>
                                         <th>Genero</th>
-                                        <th>ID Etnia</th>
-                                        <th>Historia Clinica</th>
-                                        <th>Ficha Familiar</th>
-                                        <th>ID Financiador</th>
-                                        <th>Descripción Financiador</th>
-                                        <th>Descripción Pais</th>
-                                        <th>Abrev Tipo de Documento Personal</th>
-                                        <th>N° de Documento Personal</th>
-                                        <th>Apellido Paterno Personal</th>
-                                        <th>Apellido Materno Personal</th>
-                                        <th>Nombres Personal</th>
-                                        <th>Fecha de Nacimiento Personal</th>
-                                        <th>ID Condicion</th>
-                                        <th>Descripcion Condicion</th>
-                                        <th>ID Profesion</th>
-                                        <th>Descripcion Profesion</th>
-                                        <th>ID Colegio</th>
-                                        <th>Descripcion Colegio</th>
-                                        <th>N° de Colegiatura</th>
-                                        <th>Abrev Tipo de Documento Registrador</th>
-                                        <th>N° de Documento Registrador</th>
-                                        <th>Apellido Paterno Registrador</th>
-                                        <th>Apellido Materno Registrador</th>
-                                        <th>Nombres Registrador</th>
-                                        <th>Fecha de Nacimiento Registrador</th>
-                                        <th>ID Condicion Establecimiento</th>
-                                        <th>ID Condicion Servicio</th>
-                                        <th>Edad Reg</th>
-                                        <th>Año Acutal Paciente</th>
-                                        <th>Mes Acutal Paciente</th>
-                                        <th>Dia Acutal Paciente</th>
-                                        <th>ID Turno</th>
-                                        <th>Codigo Item</th>
-                                        <th>Descripcion Item</th>
-                                        <th>Tipo de Diagnostico</th>
-                                        <th>valor Lab</th>
-                                        <th>ID Correlativo</th>
+                                        <th>Id_Etnia</th>
+                                        <th>Descripcion_Etnia</th>
+                                        <th>Historia_Clinica</th>
+                                        <th>Ficha_Familiar</th>
+                                        <th>Id_Financiador</th>
+                                        <th>Descripcion_Financiador</th>
+                                        <th>Descripcion_Pais</th>
+                                        <th>Abrev_Tipo_Doc_Personal</th>
+                                        <th>Numero_Documento_Personal</th>
+                                        <th>Apellido_Personal</th>
+                                        <th>Nombres_Personal</th>
+                                        <th>Fecha_Nacimiento_Personal</th>
+                                        <th>Id_Condicion</th>
+                                        <th>Descripcion_Condicion</th>
+                                        <th>Id_Profesion</th>
+                                        <th>Descripcion_Profesion</th>
+                                        <th>Id_Colegio</th>
+                                        <th>Descripcion_Colegio</th>
+                                        <th>Numero_Colegiatura</th>
+                                        <th>Abrev_Tipo_Doc_Registrador</th>
+                                        <th>Numero_Documento_Registrador</th>
+                                        <th>Apellido_Registrador</th>
+                                        <th>Nombres_Registrador</th>
+                                        <th>Fecha_Nacimiento_Registrador</th>
+                                        <th>Id_Condicion_Establecimiento</th>
+                                        <th>Id_Condicion_Servicio</th>
+                                        <th>Edad_Reg</th>
+                                        <th>Tipo_Edad</th>
+                                        <th>Fecha_Actual_Paciente</th>
+                                        <th>Id_Turno</th>
+                                        <th>Codigo_Item</th>
+                                        <th>Descripcion_Item</th>
+                                        <th>Tipo_Diagnostico</th>
+                                        <th>Valor_Lab</th>
+                                        <th>Id_Correlativo</th>
                                         <th>Peso</th>
                                         <th>Talla</th>
                                         <th>Hemoglobina</th>
-                                        <th>Talla</th>
-                                        <th>Talla</th>
-                                        <th>Talla</th>
-                                        <th>Talla</th>
-                                        <th>Talla</th>
-                                        <th>Tipo de Diagnostico</th>
-                                        <th>Perimetro Abdominal</th>
-                                        <th>Perimetro Cefalico</th>
-                                        <th>ID otra Condición</th>
-                                        <th>Fecha Ultima Regla</th>
-                                        <th>Fecha Solicitud HB</th>
-                                        <th>Fecha Registro</th>
-                                        <th>Fecha Modificación</th>
+                                        <th>Perimetro_Abdominal</th>
+                                        <th>Perimetro_Cefalico</th>
+                                        <th>Descripcion_Otra_Condicion</th>
+                                        <th>Fecha_Ultima_Regla</th>
+                                        <th>Fecha_Solicitud_Hb</th>
+                                        <th>Fecha_Resultado_Hb</th>
+                                        <th>Fecha_Registro</th>
+                                        <th>Fecha_Modificacion</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -263,134 +193,51 @@
 <!-- /.content -->
 
 <script>
-    $(function() {
-        bsCustomFileInput.init();
-    });
+    Listar_Consolidado();
 
     /**************************************************
     IMPORTAR DESDE EXCEL
     ****************************************************/
-    function ConsolidarPaciente() {
-        // Obtener el archivo seleccionado
-        let archivo = document.getElementById("filePaciente").files[0];
-        if (!archivo) {
-            return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
+    //validar que solo seleccione un archivo excel 
+    document.getElementById("text_archivo").addEventListener("change", () => {
+        var fileName = document.getElementById("text_archivo").value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).
+        toLowerCase();
+        if (extFile == "xlsm" || extFile == "xls" || extFile == "xlsx" || extFile == "csv") {
+            //TO DO 
+        } else {
+            Swal.fire("MENSAJE DE ADVERTENCIA",
+                "SOLO SE ACEPTAN ARCHIVOS EXCEL - USTED SUBIO UN ARCHIVO CON EXTESION " + extFile, "warning");
+            document.getElementById("text_archivo").value = "";
+        }
+    });
+
+    function cargar_excel() {
+        let archivo = document.getElementById("text_archivo").value;
+        if (archivo.length == 0) {
+            return Swal.fire("Mensaje de Advertencia", "Selecciones un Archivo", "warning");
         }
 
         let formData = new FormData();
-        formData.append('excel', archivo); // Añadir el archivo al FormData
-
-        // Realizar la solicitud AJAX
+        let excel = $("#text_archivo")[0].files[0];
+        formData.append('excel', excel);
         $.ajax({
-            url: '../document/excel_import_paciente.php',
+            url: '../document/excel_import.php',
             type: 'POST',
             data: formData,
             contentType: false,
             processData: false,
             success: function(resp) {
-                Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
-                document.getElementById('filePaciente').value = null; // Limpiar el campo
-                // Recargar la página
-                tbl_consolidado.ajax.reload();
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
+                Swal.fire("Mensaje de Confirmacion", "Importacion de Productos Exitosa", "success")
+                document.getElementById('text_archivo').value = "";
+                tbl_consolidado.ajax.reload()
+
+
             }
+
         });
+        return false;
 
-        return false; // Prevenir comportamiento predeterminado
-    }
-
-    function ConsolidarPersonal() {
-        // Obtener el archivo seleccionado
-        let archivo = document.getElementById("filePersonal").files[0];
-        if (!archivo) {
-            return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
-        }
-
-        let formData = new FormData();
-        formData.append('excel', archivo); // Añadir el archivo al FormData
-
-        // Realizar la solicitud AJAX
-        $.ajax({
-            url: '../document/excel_import_personal.php',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(resp) {
-                Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
-                document.getElementById('filePersonal').value = null; // Limpiar el campo
-                // Recargar la página
-                tbl_consolidado.ajax.reload();
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
-            }
-        });
-
-        return false; // Prevenir comportamiento predeterminado
-    }
-
-    function ConsolidarRegistrador() {
-        // Obtener el archivo seleccionado
-        let archivo = document.getElementById("fileRegistrador").files[0];
-        if (!archivo) {
-            return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
-        }
-
-        let formData = new FormData();
-        formData.append('excel', archivo); // Añadir el archivo al FormData
-
-        // Realizar la solicitud AJAX
-        $.ajax({
-            url: '../document/excel_import_registrador.php',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(resp) {
-                Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
-                document.getElementById('fileRegistrador').value = null; // Limpiar el campo
-                // Recargar la página
-                tbl_consolidado.ajax.reload();
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
-            }
-        });
-
-        return false; // Prevenir comportamiento predeterminado
-    }
-
-    function ConsolidarNominal() {
-        // Obtener el archivo seleccionado
-        let archivo = document.getElementById("fileNominal").files[0];
-        if (!archivo) {
-            return Swal.fire("Mensaje de Advertencia", "Seleccione un archivo", "warning");
-        }
-
-        let formData = new FormData();
-        formData.append('excel', archivo); // Añadir el archivo al FormData
-
-        // Realizar la solicitud AJAX
-        $.ajax({
-            url: '../document/excel_import_nominal.php',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(resp) {
-                Swal.fire("Mensaje de Confirmación", "Importación de productos exitosa", "success");
-                document.getElementById('fileNominal').value = null; // Limpiar el campo
-                // Recargar la página
-                tbl_consolidado.ajax.reload();
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                Swal.fire("Error", "Hubo un problema al procesar la solicitud: " + errorThrown, "error");
-            }
-        });
-
-        return false; // Prevenir comportamiento predeterminado
     }
 </script>
