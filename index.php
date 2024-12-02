@@ -67,9 +67,6 @@ if (isset($_SESSION['S_IDUSUARIO'])) { //si existe
                 </div>
                 <!-- /.col -->
 
-                <p class="mb-1">
-                    <a href="forgot-password.html">Olvide mi contraseña</a>
-                </p>
             </div>
             <!-- /.card-body -->
         </div>
