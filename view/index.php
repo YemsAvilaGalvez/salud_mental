@@ -115,37 +115,37 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id02.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID02</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id03.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID03</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id02.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID04</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id02.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID05</p>
                                     </a>
                                 </li> 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id02.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID06</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id02.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID07</p>
                                     </a>
@@ -157,13 +157,13 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id02.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID09</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id02.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID10</p>
                                     </a>
