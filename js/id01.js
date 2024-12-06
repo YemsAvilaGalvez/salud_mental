@@ -46,25 +46,26 @@ function Listar_Id01() {
       { data: "Anio" },
       { data: "Mes_Actual_Paciente" },
       {
-        data: "Consulta_Medica"
+        data: "Consulta_Medica",
       },
       {
-        data: "Evaluacion_Integral"
+        data: "Evaluacion_Integral",
       },
       {
-        data: "Psicoeducacion"
+        data: "Psicoeducacion",
       },
       {
-        data: "Intervencion_Individual"
+        data: "Intervencion_Individual",
       },
       {
-        data: "Psicoterapia_Individual"
+        data: "Psicoterapia_Individual",
       },
-      {data: "Intervencion_Familiar"},
-      { data: "Visita_Domiciliaria"  },
-      {  data: "Movilizacion_Social"},
+      { data: "Intervencion_Familiar" },
+      { data: "Visita_Domiciliaria" },
+      { data: "Movilizacion_Social" },
       { data: "Total_Actividades" },
       { data: "Cumplimiento" },
+
       /*
                {
                  defaultContent:
@@ -73,6 +74,15 @@ function Listar_Id01() {
                    "</center>",
                },*/
     ],
+    rowCallback: function (row, data) {
+      // Convertir el valor de "Cumplimiento" a número y evaluar
+      let cumplimiento = parseFloat(data.Cumplimiento.replace("%", ""));
+      if (cumplimiento < 60) {
+        $(row).addClass("highlight-red"); // Añadir clase a la fila
+      } else if (cumplimiento < 99) {
+        $(row).addClass("highlight-yellow"); // Resaltar en amarillo
+      }
+    },
     language: idioma_espanol,
     select: true,
   });

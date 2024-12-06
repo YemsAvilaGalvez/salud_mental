@@ -71,6 +71,18 @@
                                 </tr>
                             </tfoot>
                         </table>
+                        <style>
+                            /* Estilo para marcar filas en rojo */
+                            .highlight-red {
+                                background-color: #ffcccc !important;
+                            }
+
+                            /* Fila en amarillo para 60% <= Cumplimiento < 99% */
+                            .highlight-yellow {
+                                background-color: #ffffcc !important;
+                                /* Amarillo claro */
+                            }
+                        </style>
                     </div>
                     <!-- /.card-body -->
                 </div>

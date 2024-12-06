@@ -62,6 +62,15 @@ function Listar_Id06() {
                             "</center>",
                         },*/
     ],
+    rowCallback: function (row, data) {
+      // Convertir el valor de "Cumplimiento" a número y evaluar
+      let cumplimiento = parseFloat(data.Cumplimiento.replace("%", ""));
+      if (cumplimiento < 60) {
+        $(row).addClass("highlight-red"); // Añadir clase a la fila
+      } else if (cumplimiento < 99) {
+        $(row).addClass("highlight-yellow"); // Resaltar en amarillo
+      }
+    },
     language: idioma_espanol,
     select: true,
   });
