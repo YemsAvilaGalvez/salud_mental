@@ -1,15 +1,15 @@
-<script src="../js/id04.js?rev=<?php echo time(); ?>"></script>
+<script src="../js/id05.js?rev=<?php echo time(); ?>"></script>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>TRATAMIENTO ESPECIALIZADO  DE NIÑOS, NIÑAS Y ADOLESCENTES AFECTADOS POR VIOLENCIA SEXUAL   </h1>
+                <h1>PORCENTAJE DE  PERSONAS CON  SINDROME PSICOTICO  O TRASTORNO DEL ESPECTRO DE LA ESQUIZOFRENIA</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                    <li class="breadcrumb-item active">ID04</li>
+                    <li class="breadcrumb-item active">ID05</li>
                 </ol>
             </div>
         </div>
@@ -27,7 +27,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="tabla_id04" class="table table-bordered table-striped">
+                        <table id="tabla_id05" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -40,18 +40,21 @@
                                     <th>Año</th>
                                     <th>Mes</th>
                                     <th>Consulta Medica</th>
+                                    <th>Evaluación Integral</th>
+                                    <th>Intervenciones Individuales</th>
+                                    <th>Intervenciones Familiares</th>
                                     <th>Psicoeducación</th>
                                     <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
                                     <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
+                                    <th>Intervencion Social</th>
+                                    <th>Integracion Comunitaria</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>#</th>
+                                <th>#</th>
                                     <th>Red</th>
                                     <th>MicroRed</th>
                                     <th>Nombre Establecimiento</th>
@@ -61,11 +64,14 @@
                                     <th>Año</th>
                                     <th>Mes</th>
                                     <th>Consulta Medica</th>
+                                    <th>Evaluación Integral</th>
+                                    <th>Intervenciones Individuales</th>
+                                    <th>Intervenciones Familiares</th>
                                     <th>Psicoeducación</th>
                                     <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
                                     <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
+                                    <th>Intervencion Social</th>
+                                    <th>Integracion Comunitaria</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
                                 </tr>
@@ -84,5 +90,5 @@
 </section>
 <!-- /.content -->
 <script>
-    Listar_Id04();
+    Listar_Id05();
 </script>

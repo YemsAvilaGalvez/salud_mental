@@ -1,10 +1,10 @@
 /********************************************************************
- 		LISTAR ID01
+ 		LISTAR ID05
  ********************************************************************/
-var tbl_id01;
-function Listar_Id01() {
+var tbl_id05;
+function Listar_Id05() {
   //enviarlo al scrip en MANTENIMIENTO ROL
-  tbl_id01 = $("#tabla_id01").DataTable({
+  tbl_id05 = $("#tabla_id05").DataTable({
     responsive: true,
     ordering: true,
     bLengthChange: true,
@@ -18,7 +18,7 @@ function Listar_Id01() {
     async: false,
     processing: true,
     ajax: {
-      url: "../controller/diagnostico/controlador_id01_listar.php",
+      url: "../controller/diagnostico/controlador_id05_listar.php",
       type: "POST",
     },
     /*
@@ -52,17 +52,28 @@ function Listar_Id01() {
         data: "Evaluacion_Integral"
       },
       {
-        data: "Psicoeducacion"
-      },
-      {
         data: "Intervencion_Individual"
       },
       {
+        data: "Intervencion_Familiar"
+      },
+      {
+        data: "Psicoeducacion"
+      },
+      
+      {
         data: "Psicoterapia_Individual"
       },
-      {data: "Intervencion_Familiar"},
-      { data: "Visita_Domiciliaria"  },
-      {  data: "Movilizacion_Social"},
+      
+      {
+        data: "Visita_Domiciliaria"
+      },
+      {
+        data: "Intervencion_Social"
+      },
+      {
+        data: "Intervencion_Integracion"
+      },
       { data: "Total_Actividades" },
       { data: "Cumplimiento" },
       /*
@@ -76,9 +87,9 @@ function Listar_Id01() {
     language: idioma_espanol,
     select: true,
   });
-  tbl_id01.on("draw.td", function () {
-    var PageInfo = $("#tabla_id01").DataTable().page.info();
-    tbl_id01
+  tbl_id05.on("draw.td", function () {
+    var PageInfo = $("#tabla_id05").DataTable().page.info();
+    tbl_id05
       .column(0, { page: "current" })
       .nodes()
       .each(function (cell, i) {

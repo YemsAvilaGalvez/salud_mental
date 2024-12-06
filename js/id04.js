@@ -77,7 +77,7 @@ function Listar_Id04() {
     select: true,
   });
   tbl_id04.on("draw.td", function () {
-    var PageInfo = $("#tbl_id04").DataTable().page.info();
+    var PageInfo = $("#tabla_id04").DataTable().page.info();
     tbl_id04
       .column(0, { page: "current" })
       .nodes()
