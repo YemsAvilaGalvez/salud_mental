@@ -123,3 +123,54 @@ function Listar_Consolidado() {
       });
   });
 }
+
+
+/**********************************************************************
+ 				MENSAJE ELIMINAR BIEN
+ ***********************************************************************/
+         $('#tabla_consolidado').on('click', '.eliminar', function() {//campo activar tiene que ir en el boton
+          var data = tbl_consolidado.row($(this).parents('tr')).data();//tamaño de escritorio
+          if (tbl_consolidado.row(this).child.isShown()) {
+              var data = tbl_consolidado.row(this).data();//para celular y usas el responsive datatable
+          }
+          Swal.fire({
+            title: 'Desea Eliminar el Consolidado?',
+            text: "Se borrara todos los registros de la base de datos",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, confirmar'
+          }).then((result) => {
+            if (result.isConfirmed) {
+             Eliminar_Consolidado();//campo id de la marca luego llamamos al metodo
+            }
+          })
+       });
+      
+      
+      
+       /********************************************************************
+                   METODO   ELIMINAR LA GRADO
+       ********************************************************************/
+       function Eliminar_Consolidado(){
+          $.ajax({
+               url:'../controller/consolidado/controlador_eliminar_grados.php',
+               type: 'POST',
+               data:{
+                 // id_consolidado: id_consolidado//le enviamos los campos al controlador
+      
+      
+               }
+           }).done(function(resp){
+               if (resp>0) {
+                           Swal.fire("Mensaje de Confirmacion","Bien Eliminado","success").then((value)=>{
+                               tbl_consolidado.ajax.reload();//recargar dataTable
+                               //TraerNotificaciones();
+                           });	 			
+                   }else{
+                       Swal.fire("Mensaje de Error","No se puede eliminar el Bien","error");
+                   }
+           })
+       }
+      

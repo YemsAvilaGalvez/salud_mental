@@ -24,11 +24,14 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-lg-10">
+                            <div class="col-lg-9">
                                 <input class="form-control" type="file" id="text_archivo" accept=".xls, .xlsx, .csv">
                             </div>
                             <div class="col-lg-2">
                                 <button type="submit" class="btn btn-primary" onclick="cargar_excel()">Cargar Consolidado</button>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="submit" class="btn btn-danger" onclick="Eliminar_Consolidado()"><i class="fas fa-trash"></i></button>
                             </div>
                         </div>
 
