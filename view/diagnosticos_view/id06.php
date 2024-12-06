@@ -1,15 +1,15 @@
-<script src="../js/id04.js?rev=<?php echo time(); ?>"></script>
+<script src="../js/id06.js?rev=<?php echo time(); ?>"></script>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>TRATAMIENTO ESPECIALIZADO  DE NIÑOS, NIÑAS Y ADOLESCENTES AFECTADOS POR VIOLENCIA SEXUAL   </h1>
+                <h1>PORCENTAJE DE  PERSONAS CON  TRASTORNOS AFECTIVOS - DEPRESION</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                    <li class="breadcrumb-item active">ID04</li>
+                    <li class="breadcrumb-item active">ID06</li>
                 </ol>
             </div>
         </div>
@@ -27,7 +27,7 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="tabla_id04" class="table table-bordered table-striped">
+                        <table id="tabla_id06" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -42,9 +42,10 @@
                                     <th>Consulta Medica</th>
                                     <th>Psicoeducación</th>
                                     <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
+                                    <th>Grupo de Ayuda Mutua</th>
                                     <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
+                                    <th>Evaluación Interdiciplinaria</th>
+                                    <th>Intervenciones Individuales</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
                                 </tr>
@@ -63,9 +64,10 @@
                                     <th>Consulta Medica</th>
                                     <th>Psicoeducación</th>
                                     <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
+                                    <th>Grupo de Ayuda Mutua</th>
                                     <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
+                                    <th>Evaluación Interdiciplinaria</th>
+                                    <th>Intervenciones Individuales</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
                                 </tr>
@@ -84,5 +86,5 @@
 </section>
 <!-- /.content -->
 <script>
-    Listar_Id04();
+    Listar_Id06();
 </script>
