@@ -180,8 +180,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
 
               <div class="info-box-content">
                 <span class="info-box-text">Registros <b class="text-info">Totales</b></span>
-                <span class="info-box-number">
-                  10
+                <span class="info-box-number" id="totalRegistros">
+                  Cargando...
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -527,6 +527,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
             }
         }
     </script>
+    <script src="../js/ds.js?rev=<?php echo time(); ?>"></script>
+
 </body>
 
 </html>

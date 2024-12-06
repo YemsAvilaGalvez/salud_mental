@@ -27,4 +27,5 @@ class conexionBD
     {
         $this->$pdo = null;
     }
+    
 }
