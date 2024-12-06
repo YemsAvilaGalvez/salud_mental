@@ -26,4 +26,23 @@ class Modelo_Consolidado extends conexionBD
         return $arreglo;
         conexionBD::cerrar_conexion();
     }
+
+    public function Eliminar_Consolidado()//viene del controlador
+{
+       $c = conexionBD:: conexionPDO();
+
+       $sql = "CALL SP_ELIMINAR_CONSOLIDADO()";
+       $query = $c->prepare($sql);//mandamos el precedure
+       //$query ->bindParam(1,$id_consolidado);//enviamos los parametros seguun la posicion del procedure
+       $resultado = $query ->execute();
+       //solo de usa cuando no se retorna un valor en el procedure(actualizar)
+       if($resultado){
+           return 1;
+       }else{
+           return 0;
+       }
+       conexionBD::cerrar_conexion();
+    }
 }
+
+
