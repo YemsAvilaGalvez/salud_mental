@@ -25,7 +25,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-lg-9">
-                                <input class="form-control" type="file" id="text_archivo" accept=".xls, .xlsx, .csv">
+                                <input class="form-control" type="file" id="text_archivo" accept=".xls, .xlsx, .xlsm, .csv">
                             </div>
                             <div class="col-lg-2">
                                 <button type="submit" class="btn btn-primary" onclick="cargar_excel()">Cargar Consolidado</button>
@@ -207,7 +207,7 @@
         var idxDot = fileName.lastIndexOf(".") + 1;
         var extFile = fileName.substr(idxDot, fileName.length).
         toLowerCase();
-        if (extFile == "xlsm" || extFile == "xls" || extFile == "xlsx" || extFile == "csv") {
+        if (extFile == "xlsm" || extFile == "xls" || extFile == "xlsx" || extFile == "csv" || extFile == ".xlsm") {
             //TO DO 
         } else {
             Swal.fire("MENSAJE DE ADVERTENCIA",

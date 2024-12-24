@@ -2,7 +2,7 @@
 
 require '../../model/modelo_diagnostico.php';
 $MP = new Modelo_Diagnostico(); //instaciamops
-$consulta = $MP->Listar_Id04_R(); //llamamos al modelo
+$consulta = $MP->Listar_Id07(); //llamamos al modelo
 if ($consulta) {
     echo json_encode($consulta);
 } else {

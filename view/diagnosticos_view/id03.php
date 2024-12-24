@@ -100,85 +100,6 @@
             </div>
             <!-- /.col -->
 
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Lista de Pacientes con Diagnostico Tipo R</h3>
-
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool text-black" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <table id="tabla_id03_r" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Red</th>
-                                    <th>MicroRed</th>
-                                    <th>Nombre Establecimiento</th>
-                                    <th>Nombre Completo</th>
-                                    <th>DNI</th>
-                                    <th>Código único</th>
-                                    <th>Año</th>
-                                    <th>Mes</th>
-                                    <th>Consulta Medica</th>
-                                    <th>Evaluación Integral</th>
-                                    <th>Psicoeducación</th>
-                                    <th>Intervenciones Individuales</th>
-                                    <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
-                                    <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
-                                    <th>Total de Actividades</th>
-                                    <th>Cumplimiento</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Red</th>
-                                    <th>MicroRed</th>
-                                    <th>Nombre Establecimiento</th>
-                                    <th>Nombre Completo</th>
-                                    <th>DNI</th>
-                                    <th>Código único</th>
-                                    <th>Año</th>
-                                    <th>Mes</th>
-                                    <th>Consulta Medica</th>
-                                    <th>Evaluación Integral</th>
-                                    <th>Psicoeducación</th>
-                                    <th>Intervenciones Individuales</th>
-                                    <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
-                                    <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
-                                    <th>Total de Actividades</th>
-                                    <th>Cumplimiento</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        <style>
-                            /* Estilo para marcar filas en rojo */
-                            .highlight-red {
-                                background-color: #ffcccc !important;
-                            }
-
-                            /* Fila en amarillo para 60% <= Cumplimiento < 99% */
-                            .highlight-yellow {
-                                background-color: #ffffcc !important;
-                                /* Amarillo claro */
-                            }
-                        </style>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- /.col -->
         </div>
         <!-- /.row -->
     </div>
@@ -187,5 +108,4 @@
 <!-- /.content -->
 <script>
     Listar_Id03();
-    Listar_Id03_R();
 </script>

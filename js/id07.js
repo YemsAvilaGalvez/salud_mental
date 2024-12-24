@@ -1,10 +1,10 @@
 /********************************************************************
- 		LISTAR ID01
+ 		LISTAR ID05
  ********************************************************************/
-var tbl_id03;
-function Listar_Id03() {
+var tbl_id07;
+function Listar_Id07() {
   //enviarlo al scrip en MANTENIMIENTO ROL
-  tbl_id03 = $("#tabla_id03").DataTable({
+  tbl_id07 = $("#tabla_id07").DataTable({
     responsive: true,
     ordering: true,
     bLengthChange: true,
@@ -18,7 +18,7 @@ function Listar_Id03() {
     async: false,
     processing: true,
     ajax: {
-      url: "../controller/diagnostico/controlador_id03_listar.php",
+      url: "../controller/diagnostico/controlador_id07_listar.php",
       type: "POST",
     },
     /*
@@ -45,30 +45,11 @@ function Listar_Id03() {
       { data: "Codigo_Unico" },
       { data: "Anio" },
       { data: "Mes_Actual_Paciente" },
-      {
-        data: "Consulta_Medica",
-      },
-      {
-        data: "Evaluacion_Integral",
-      },
-      {
-        data: "Psicoeducacion",
-      },
-      {
-        data: "Intervencion_Individual",
-      },
-      {
-        data: "Psicoterapia_Individual",
-      },
-      {
-        data: "Intervencion_Familiar",
-      },
-      {
-        data: "Visita_Domiciliaria",
-      },
-      {
-        data: "Movilizacion_Social",
-      },
+      { data: "Consulta_Medica" },
+      { data: "Evaluacion_Interdiciplinaria" },
+      { data: "Psicoterapia_Individual" },
+      { data: "Ayuda_Mutua" },
+      { data: "Traller_Activacion_Fisica" },
       { data: "Total_Actividades" },
       { data: "Cumplimiento" },
       /*
@@ -91,9 +72,9 @@ function Listar_Id03() {
     language: idioma_espanol,
     select: true,
   });
-  tbl_id03.on("draw.td", function () {
-    var PageInfo = $("#tabla_id03").DataTable().page.info();
-    tbl_id03
+  tbl_id07.on("draw.td", function () {
+    var PageInfo = $("#tabla_id07").DataTable().page.info();
+    tbl_id07
       .column(0, { page: "current" })
       .nodes()
       .each(function (cell, i) {
@@ -101,4 +82,3 @@ function Listar_Id03() {
       });
   });
 }
-
