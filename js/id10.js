@@ -2,6 +2,12 @@
  		LISTAR ID05
  ********************************************************************/
 var tbl_id10;
+// Obtener la fecha actual
+var fechaActual = new Date();
+var dia = String(fechaActual.getDate()).padStart(2, "0");
+var mes = String(fechaActual.getMonth() + 1).padStart(2, "0"); // Los meses van de 0 a 11
+var anio = fechaActual.getFullYear();
+var fechaFormateada = dia + "-" + mes + "-" + anio;
 function Listar_Id10() {
   //enviarlo al scrip en MANTENIMIENTO ROL
   tbl_id10 = $("#tabla_id10").DataTable({
@@ -21,19 +27,22 @@ function Listar_Id10() {
       url: "../controller/diagnostico/controlador_id10_listar.php",
       type: "POST",
     },
-    /*
-                               dom: "Blfrtip",
-                               buttons: [
-                                 {
-                                   extend: "excelHtml5",
-                                   title: "Reporte Consolidado",
-                                   exportOptions: {
-                                     columns: [0, 1, 2, 3, 4, 5, 6, 7],
-                                   },
-                                   text: '<i class="fa fa-file-excel"></i>',
-                                   titleAttr: "Exportar a Excel",
-                                 },
-                               ],*/
+    dom: "Blfrtip",
+    buttons: [
+      {
+        extend: "excelHtml5",
+        title:
+          fechaFormateada +
+          "-INTERVENCIONES BREVES MOTIVACIONALES PARA PERSONAS CON CONSUMO PERJUDICIAL DE ALCOHOL Y TABACO",
+        exportOptions: {
+          columns: [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+          ],
+        },
+        text: '<i class="fa fa-file-excel"></i>',
+        titleAttr: "Exportar a Excel",
+      },
+    ],
     columns: [
       //todos los datos del procedimiento almacenado
       { defaultContent: "" }, //cintador
@@ -45,25 +54,28 @@ function Listar_Id10() {
       { data: "Codigo_Unico" },
       { data: "Anio" },
       { data: "Mes" },
-      { data: "Intervencion_Interdiciplinaria" },
-      { data: "Cosejeria" },
-      { data: "Intervencion_Breve" },
-      { data: "Total_Actividades" },
-      { data: "Cumplimiento" },
-      /*
-                                 {
-                                   defaultContent:
-                                     "<center>" +
-                                     "<span class=' editar text-primary px-1' style='cursor:pointer;' title='Editar datos'><i class= 'fa fa-edit'></i></span><span class=' aumentar text-success px-1' style='cursor:pointer;' title='Aumentar Stock'><i class= 'fa fa-plus'></i></span><span class=' codigoqr text-secondary px-1' style='cursor:pointer;' title='Generar codigo Qr'><i class= 'fa fa-qrcode'></i></span>&nbsp;<span class='foto text-info px-1' style='cursor:pointer;' title='Cambiar foto'><i class='fa fa-image'></i></span>" +
-                                     "</center>",
-                                 },*/
+      { data: "fecha_eva1" },
+      { data: "total_evaluacion_interdisciplinaria" },
+      { data: "fecha_conseje1" },
+      { data: "total_consjeria" },
+      { data: "fecha_interind1" },
+      { data: "fecha_interind2" },
+      { data: "fecha_interind3" },
+      { data: "fecha_interind4" },
+      { data: "total_intervencion_individual" },
+      { data: "total_actividades" },
+      { data: "porcentaje_total",
+        render: function (data, type, row) {
+          return data + " %"; // Concatenar el texto ' %' al valor de porcentaje_total
+        }, 
+      },
     ],
     rowCallback: function (row, data) {
       // Convertir el valor de "Cumplimiento" a número y evaluar
-      let cumplimiento = parseFloat(data.Cumplimiento.replace("%", ""));
-      if (cumplimiento < 60) {
+      let porcentaje_total = parseFloat(data.porcentaje_total.replace("%", ""));
+      if (porcentaje_total < 60) {
         $(row).addClass("highlight-red"); // Añadir clase a la fila
-      } else if (cumplimiento < 99) {
+      } else if (porcentaje_total < 99) {
         $(row).addClass("highlight-yellow"); // Resaltar en amarillo
       }
     },
@@ -71,7 +83,7 @@ function Listar_Id10() {
     select: true,
   });
   tbl_id10.on("draw.td", function () {
-    var PageInfo = $("#tabla_id06").DataTable().page.info();
+    var PageInfo = $("#tabla_id10").DataTable().page.info();
     tbl_id10
       .column(0, { page: "current" })
       .nodes()

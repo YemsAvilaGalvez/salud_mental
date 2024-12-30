@@ -151,12 +151,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) { //si existe
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id08.php')">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>ID08</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','diagnosticos_view/id10.php')">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ID10</p>

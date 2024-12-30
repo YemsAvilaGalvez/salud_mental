@@ -45,10 +45,49 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>C_med1</th>
+                                    <th>C_med2</th>
+                                    <th>C_med3</th>
+                                    <th>C_med4</th>
                                     <th>Consulta Medica</th>
+                                    <th>Eval.</th>
                                     <th>Evaluación Interdiciplinaria</th>
+                                    <th>P_i1</th>
+                                    <th>P_i2</th>
+                                    <th>P_i3</th>
+                                    <th>P_i4</th>
+                                    <th>P_i5</th>
+                                    <th>P_i6</th>
+                                    <th>P_i7</th>
+                                    <th>P_i8</th>
+                                    <th>P_i9</th>
+                                    <th>P_i10</th>
+                                    <th>P_i11</th>
+                                    <th>P_i12</th>
                                     <th>Psicoterapia Individual</th>
+                                    <th>G_a1</th>
+                                    <th>G_a2</th>
+                                    <th>G_a3</th>
+                                    <th>G_a4</th>
+                                    <th>G_a5</th>
+                                    <th>G_a6</th>
+                                    <th>G_a7</th>
+                                    <th>G_a8</th>
+                                    <th>G_a9</th>
+                                    <th>G_a10</th>
                                     <th>Grupo de Ayuda Mutua</th>
+                                    <th>T_a1</th>
+                                    <th>T_a2</th>
+                                    <th>T_a3</th>
+                                    <th>T_a4</th>
+                                    <th>T_a5</th>
+                                    <th>T_a6</th>
+                                    <th>T_a7</th>
+                                    <th>T_a8</th>
+                                    <th>T_a9</th>
+                                    <th>T_a10</th>
+                                    <th>T_a11</th>
+                                    <th>T_a12</th>
                                     <th>Taller de Activación Física</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
@@ -65,10 +104,49 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>C_med1</th>
+                                    <th>C_med2</th>
+                                    <th>C_med3</th>
+                                    <th>C_med4</th>
                                     <th>Consulta Medica</th>
+                                    <th>Eval.</th>
                                     <th>Evaluación Interdiciplinaria</th>
+                                    <th>P_i1</th>
+                                    <th>P_i2</th>
+                                    <th>P_i3</th>
+                                    <th>P_i4</th>
+                                    <th>P_i5</th>
+                                    <th>P_i6</th>
+                                    <th>P_i7</th>
+                                    <th>P_i8</th>
+                                    <th>P_i9</th>
+                                    <th>P_i10</th>
+                                    <th>P_i11</th>
+                                    <th>P_i12</th>
                                     <th>Psicoterapia Individual</th>
+                                    <th>G_a1</th>
+                                    <th>G_a2</th>
+                                    <th>G_a3</th>
+                                    <th>G_a4</th>
+                                    <th>G_a5</th>
+                                    <th>G_a6</th>
+                                    <th>G_a7</th>
+                                    <th>G_a8</th>
+                                    <th>G_a9</th>
+                                    <th>G_a10</th>
                                     <th>Grupo de Ayuda Mutua</th>
+                                    <th>T_a1</th>
+                                    <th>T_a2</th>
+                                    <th>T_a3</th>
+                                    <th>T_a4</th>
+                                    <th>T_a5</th>
+                                    <th>T_a6</th>
+                                    <th>T_a7</th>
+                                    <th>T_a8</th>
+                                    <th>T_a9</th>
+                                    <th>T_a10</th>
+                                    <th>T_a11</th>
+                                    <th>T_a12</th>
                                     <th>Taller de Activación Física</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>

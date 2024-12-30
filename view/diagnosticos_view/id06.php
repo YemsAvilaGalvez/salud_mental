@@ -45,12 +45,42 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>C_med1</th>
+                                    <th>C_med2</th>
+                                    <th>C_med3</th>
+                                    <th>C_med4</th>
+                                    <th>C_med5</th>
+                                    <th>C_med6</th>
                                     <th>Consulta Medica</th>
+                                    <th>P_e1</th>
+                                    <th>P_e2</th>
+                                    <th>P_e3</th>
+                                    <th>P_e4</th>
                                     <th>Psicoeducación</th>
+                                    <th>P_i1</th>
+                                    <th>P_i2</th>
+                                    <th>P_i3</th>
+                                    <th>P_i4</th>
+                                    <th>P_i5</th>
+                                    <th>P_i6</th>
+                                    <th>P_i7</th>
+                                    <th>P_i8</th>
                                     <th>Psicoterapia Individual</th>
+                                    <th>G_a1</th>
+                                    <th>G_a2</th>
+                                    <th>G_a3</th>
+                                    <th>G_a4</th>
+                                    <th>G_a5</th>
+                                    <th>G_a6</th>
                                     <th>Grupo de Ayuda Mutua</th>
+                                    <th>V_d1</th>
                                     <th>Visita Domiciliaria</th>
+                                    <th>Eval.</th>
                                     <th>Evaluación Interdiciplinaria</th>
+                                    <th>I_i1</th>
+                                    <th>I_i2</th>
+                                    <th>I_i3</th>
+                                    <th>I_i4</th>
                                     <th>Intervenciones Individuales</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
@@ -58,7 +88,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>#</th>
+                                <th>#</th>
                                     <th>Red</th>
                                     <th>MicroRed</th>
                                     <th>Nombre Establecimiento</th>
@@ -67,12 +97,42 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>C_med1</th>
+                                    <th>C_med2</th>
+                                    <th>C_med3</th>
+                                    <th>C_med4</th>
+                                    <th>C_med5</th>
+                                    <th>C_med6</th>
                                     <th>Consulta Medica</th>
+                                    <th>P_e1</th>
+                                    <th>P_e2</th>
+                                    <th>P_e3</th>
+                                    <th>P_e4</th>
                                     <th>Psicoeducación</th>
+                                    <th>P_i1</th>
+                                    <th>P_i2</th>
+                                    <th>P_i3</th>
+                                    <th>P_i4</th>
+                                    <th>P_i5</th>
+                                    <th>P_i6</th>
+                                    <th>P_i7</th>
+                                    <th>P_i8</th>
                                     <th>Psicoterapia Individual</th>
+                                    <th>G_a1</th>
+                                    <th>G_a2</th>
+                                    <th>G_a3</th>
+                                    <th>G_a4</th>
+                                    <th>G_a5</th>
+                                    <th>G_a6</th>
                                     <th>Grupo de Ayuda Mutua</th>
+                                    <th>V_d1</th>
                                     <th>Visita Domiciliaria</th>
+                                    <th>Eval.</th>
                                     <th>Evaluación Interdiciplinaria</th>
+                                    <th>I_i1</th>
+                                    <th>I_i2</th>
+                                    <th>I_i3</th>
+                                    <th>I_i4</th>
                                     <th>Intervenciones Individuales</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>

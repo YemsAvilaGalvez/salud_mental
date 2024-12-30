@@ -45,12 +45,39 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
-                                    <th>Consulta Medica</th>
-                                    <th>Psicoeducación</th>
-                                    <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
-                                    <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
+                                    <th>C_med1</th>
+                                    <th>C_med2</th>
+                                    <th>C_med3</th>
+                                    <th >Consulta Medica</th>
+                                    <th>P_e1</th>
+                                    <th>P_e2</th>
+                                    <th>P_e3</th>
+                                    <th >Psicoeducación</th>
+                                    <th>P_i1</th>
+                                    <th>P_i2</th>
+                                    <th>P_i3</th>
+                                    <th>P_i4</th>
+                                    <th>P_i5</th>
+                                    <th>P_i6</th>
+                                    <th>P_i7</th>
+                                    <th>P_i8</th>
+                                    <th>P_i9</th>
+                                    <th>P_i10</th>
+                                    <th>P_i11</th>
+                                    <th>P_i12</th>
+                                    <th >Psicoterapia Individual</th>
+                                    <th>I_f1</th>
+                                    <th>I_f2</th>
+                                    <th>I_f3</th>
+                                    <th>I_f4</th>
+                                    <th >Intervenciones Familiares</th>
+                                    <th>V_d1</th>
+                                    <th>V_d2</th>
+                                    <th >Visita Domiciliaria</th>
+                                    <th>M_s1</th>
+                                    <th>M_s2</th>
+                                    <th>M_s3</th>
+                                    <th >Movilización Social</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
                                 </tr>
@@ -66,12 +93,39 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
-                                    <th>Consulta Medica</th>
-                                    <th>Psicoeducación</th>
-                                    <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
-                                    <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
+                                    <th>C_med1</th>
+                                    <th>C_med2</th>
+                                    <th>C_med3</th>
+                                    <th >Consulta Medica</th>
+                                    <th>P_e1</th>
+                                    <th>P_e2</th>
+                                    <th>P_e3</th>
+                                    <th >Psicoeducación</th>
+                                    <th>P_i1</th>
+                                    <th>P_i2</th>
+                                    <th>P_i3</th>
+                                    <th>P_i4</th>
+                                    <th>P_i5</th>
+                                    <th>P_i6</th>
+                                    <th>P_i7</th>
+                                    <th>P_i8</th>
+                                    <th>P_i9</th>
+                                    <th>P_i10</th>
+                                    <th>P_i11</th>
+                                    <th>P_i12</th>
+                                    <th >Psicoterapia Individual</th>
+                                    <th>I_f1</th>
+                                    <th>I_f2</th>
+                                    <th>I_f3</th>
+                                    <th>I_f4</th>
+                                    <th >Intervenciones Familiares</th>
+                                    <th>V_d1</th>
+                                    <th>V_d2</th>
+                                    <th >Visita Domiciliaria</th>
+                                    <th>M_s1</th>
+                                    <th>M_s2</th>
+                                    <th>M_s3</th>
+                                    <th >Movilización Social</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
                                 </tr>

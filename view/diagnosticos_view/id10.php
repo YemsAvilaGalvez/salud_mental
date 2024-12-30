@@ -45,8 +45,14 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>Eval.</th>
                                     <th>Evaluación Interdiciplinaria</th>
+                                    <th>Cons_1</th>
                                     <th>Consejería</th>
+                                    <th>I_b1</th>
+                                    <th>I_b2</th>
+                                    <th>I_b3</th>
+                                    <th>I_b4</th>
                                     <th>Intervención Breve</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
@@ -63,8 +69,14 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>Eval.</th>
                                     <th>Evaluación Interdiciplinaria</th>
+                                    <th>Cons_1</th>
                                     <th>Consejería</th>
+                                    <th>I_b1</th>
+                                    <th>I_b2</th>
+                                    <th>I_b3</th>
+                                    <th>I_b4</th>
                                     <th>Intervención Breve</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>

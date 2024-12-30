@@ -45,14 +45,39 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
-                                    <th>Consulta Medica</th>
-                                    <th>Evaluación Integral</th>
-                                    <th>Psicoeducación</th>
-                                    <th>Intervenciones Individuales</th>
-                                    <th>Psicoterapia Individual</th>
-                                    <th>Intervenciones Familiares</th>
-                                    <th>Visita Domiciliaria</th>
-                                    <th>Movilización Social</th>
+                                    <th>C_med1</th>
+                                    <th>C_med2</th>
+                                    <th>C_med3</th>
+                                    <th >Consulta Medica</th>
+                                    <th>Eval.</th>
+                                    <th >Evaluación Integral</th>
+                                    <th>P_e1</th>
+                                    <th>P_e2</th>
+                                    <th>P_e3</th>
+                                    <th >Psicoeducación</th>
+                                    <th>I_i1</th>
+                                    <th>I_i2</th>
+                                    <th>I_i3</th>
+                                    <th >Intervenciones Individuales</th>
+                                    <th>P_i1</th>
+                                    <th>P_i2</th>
+                                    <th>P_i3</th>
+                                    <th>P_i4</th>
+                                    <th>P_i5</th>
+                                    <th>P_i6</th>
+                                    <th>P_i7</th>
+                                    <th>P_i8</th>
+                                    <th >Psicoterapia Individual</th>
+                                    <th>I_f1</th>
+                                    <th>I_f2</th>
+                                    <th>I_f3</th>
+                                    <th >Intervenciones Familiares</th>
+                                    <th>V_d1</th>
+                                    <th>V_d2</th>
+                                    <th >Visita Domiciliaria</th>
+                                    <th>M_s1</th>
+                                    <th>M_s2</th>
+                                    <th >Movilización Social</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
                                 </tr>
@@ -68,13 +93,38 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>C_med1</th>
+                                    <th>C_med2</th>
+                                    <th>C_med3</th>
                                     <th>Consulta Medica</th>
+                                    <th>Eval.</th>
                                     <th>Evaluación Integral</th>
+                                    <th>P_e1</th>
+                                    <th>P_e2</th>
+                                    <th>P_e3</th>
                                     <th>Psicoeducación</th>
+                                    <th>I_i1</th>
+                                    <th>I_i2</th>
+                                    <th>I_i3</th>
                                     <th>Intervenciones Individuales</th>
+                                    <th>P_i1</th>
+                                    <th>P_i2</th>
+                                    <th>P_i3</th>
+                                    <th>P_i4</th>
+                                    <th>P_i5</th>
+                                    <th>P_i6</th>
+                                    <th>P_i7</th>
+                                    <th>P_i8</th>
                                     <th>Psicoterapia Individual</th>
+                                    <th>I_f1</th>
+                                    <th>I_f2</th>
+                                    <th>I_f3</th>
                                     <th>Intervenciones Familiares</th>
+                                    <th>V_d1</th>
+                                    <th>V_d2</th>
                                     <th>Visita Domiciliaria</th>
+                                    <th>M_s1</th>
+                                    <th>M_s2</th>
                                     <th>Movilización Social</th>
                                     <th>Total de Actividades</th>
                                     <th>Cumplimiento</th>
@@ -101,42 +151,10 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-
-        <div class="modal fade" id="modal_consulta_medica">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Consulta Medica</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                    <table id="tabla_consulta_medica" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Fecha 1</th>
-                                    <th>Fecha 2</th>
-                                    <th>Fecha 3</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
     </div>
     <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
 <script>
     Listar_Id01();
-    Listar_Consulta_Medica();
 </script>
