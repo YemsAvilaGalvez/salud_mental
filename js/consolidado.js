@@ -128,11 +128,7 @@ function Listar_Consolidado() {
 /**********************************************************************
  				MENSAJE ELIMINAR BIEN
  ***********************************************************************/
-         $('#tabla_consolidado').on('click', '.eliminar', function() {//campo activar tiene que ir en el boton
-          var data = tbl_consolidado.row($(this).parents('tr')).data();//tamaño de escritorio
-          if (tbl_consolidado.row(this).child.isShown()) {
-              var data = tbl_consolidado.row(this).data();//para celular y usas el responsive datatable
-          }
+         $('#Eliminar').on('click', function() {//campo activar tiene que ir en el boton
           Swal.fire({
             title: 'Desea Eliminar el Consolidado?',
             text: "Se borrara todos los registros de la base de datos",

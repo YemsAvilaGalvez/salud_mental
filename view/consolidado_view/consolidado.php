@@ -31,7 +31,7 @@
                                 <button type="submit" class="btn btn-primary" onclick="cargar_excel()">Cargar Consolidado</button>
                             </div>
                             <div class="col-lg-1">
-                                <button type="submit" class="btn btn-danger" onclick="Eliminar_Consolidado()"><i class="fas fa-trash"></i></button>
+                                <button type="submit" class="btn btn-danger" id="Eliminar""><i class="fas fa-trash"></i></button>
                             </div>
                         </div>
 
