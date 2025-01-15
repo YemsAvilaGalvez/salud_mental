@@ -31,7 +31,14 @@
                                 <button type="submit" class="btn btn-primary" onclick="cargar_excel()">Cargar Consolidado</button>
                             </div>
                             <div class="col-lg-1">
-                                <button type="submit" class="btn btn-danger" id="Eliminar""><i class="fas fa-trash"></i></button>
+                                <button type="submit" class="btn btn-danger eliminar" id="Eliminar"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- FILA PARA IMAGEN DEL GIF -->
+                        <div class="row justify-content-center mx-0">
+                            <div class="col-lg-12 mx-0 text-center">
+                                <img src="assets/img/loading.gif" id="img_carga" style="display:none; margin: 0 auto;">
                             </div>
                         </div>
 
@@ -222,6 +229,8 @@
             return Swal.fire("Mensaje de Advertencia", "Selecciones un Archivo", "warning");
         }
 
+        document.getElementById('img_carga').style.display = 'block';
+
         let formData = new FormData();
         let excel = $("#text_archivo")[0].files[0];
         formData.append('excel', excel);
@@ -232,11 +241,13 @@
             contentType: false,
             processData: false,
             success: function(resp) {
-                Swal.fire("Mensaje de Confirmacion", "Importacion de Productos Exitosa", "success")
+                Swal.fire("Mensaje de Confirmacion", "Importacion de Productos Exitosa", "success");
                 document.getElementById('text_archivo').value = "";
-                tbl_consolidado.ajax.reload()
-
-
+                tbl_consolidado.ajax.reload();
+                document.getElementById('img_carga').style.display = 'none';
+            },
+            error: function() {
+                document.getElementById('img_carga').style.display = 'none';
             }
 
         });
