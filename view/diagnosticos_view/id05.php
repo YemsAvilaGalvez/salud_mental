@@ -45,6 +45,7 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>Diagnostico</th>
                                     <th>C_med1</th>
                                     <th>C_med2</th>
                                     <th>C_med3</th>
@@ -115,6 +116,7 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>Diagnostico</th>
                                     <th>C_med1</th>
                                     <th>C_med2</th>
                                     <th>C_med3</th>

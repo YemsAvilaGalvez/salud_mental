@@ -45,6 +45,7 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>Diagnostico</th>
                                     <th>Eval.</th>
                                     <th>Evaluación Interdiciplinaria</th>
                                     <th>Cons_1</th>
@@ -69,6 +70,7 @@
                                     <th>Código único</th>
                                     <th>Año</th>
                                     <th>Mes</th>
+                                    <th>Diagnostico</th>
                                     <th>Eval.</th>
                                     <th>Evaluación Interdiciplinaria</th>
                                     <th>Cons_1</th>
